@@ -1,4 +1,22 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\PurchaseDetailsController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SellingController;
+use App\Http\Controllers\SellingDetailsController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SpendingController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\UserController;
+
+use App\Category;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,9 +29,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//  Route::get('/', function () {
+//      return view('welcome');
+//  });
 
 Auth::routes();
 

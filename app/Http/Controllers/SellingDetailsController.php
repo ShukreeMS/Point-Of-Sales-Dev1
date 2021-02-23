@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Redirect;
-use Auth;
-use PDF;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 use App\Selling;
 use App\Product;
 use App\Member;

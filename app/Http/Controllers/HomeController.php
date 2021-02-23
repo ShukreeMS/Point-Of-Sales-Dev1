@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 use App\Setting;
 use App\Category;

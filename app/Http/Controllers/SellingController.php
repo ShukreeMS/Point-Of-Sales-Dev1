@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Redirect;
+use Illuminate\Support\Facades\Redirect;
 use App\Selling;
 use App\Product;
 use App\Member;
