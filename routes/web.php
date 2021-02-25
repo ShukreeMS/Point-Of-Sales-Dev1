@@ -13,6 +13,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SpendingController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\RegisterController;
 
 use App\Category;
 use App\User;
@@ -36,6 +37,12 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+/* Route::get('purchase/{id}/show', 'RegisterController@create');
+Route::view('/register', 'register');
+Route::get('/register', function () {
+    return view('auth.register');
+}); */
 
 Route::group(['middleware' => ['web', 'usercheck:1']], function(){
 	Route::get('category/data', 'CategoryController@listData')->name('category.data');

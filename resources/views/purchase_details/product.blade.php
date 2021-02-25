@@ -10,8 +10,8 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Kode Produk</th>
-                                        <th>Nama Produk</th>
+                                        <th>Product Code</th>
+                                        <th>Nama Product</th>
                                         <th>Harga Beli</th>
                                         <th>Aksi</th>
                                     </tr>

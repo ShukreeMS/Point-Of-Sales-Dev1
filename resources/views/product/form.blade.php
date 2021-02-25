@@ -10,21 +10,21 @@
                 <div class="modal-body">
                 <input type="hidden" id="id" name="id">
                     <div class="form-group form-float">
-                        <label class="form-label">Kode Produk</label>
+                        <label class="form-label">Product Code</label>
                         <div class="form-line">
                             <input type="number" class="form-control" id="product_code" name="product_code" autofocus required>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Nama Produk</label>
+                            <label class="form-label">Nama Product</label>
                             <input type="text" class="form-control" id="product_name" name="product_name" autofocus required>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
                             <select id="category" type="text" name="category" class="form-control show-tick" required>
-                                <option value="">-- Pilih Kategori --</option>
+                                <option value="">-- Pilih Category --</option>
                                 @foreach($category as $list)
                                 <option value="{{$list->category_id}}">{{$list->category_name}}</option>
                                 @endforeach
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Merek Produk</label>
+                            <label class="form-label">Merek Product</label>
                             <input type="text" class="form-control" id="product_brand" name="product_brand" autofocus required>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Stok Produk</label>
+                            <label class="form-label">Stok Product</label>
                             <input type="text" class="form-control" id="product_stock" name="product_stock" autofocus required>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-	Produk
+	Product
 @endsection
 
 @section('content')
@@ -11,8 +11,8 @@
   	<div class="dropdown d-inline">
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Produk</a>
-	  	<a class="dropdown-item has-icon" onclick="printBarcode()"><i class="fas fa-print"></i>Print Barcode Produk</a>
+      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Product</a>
+	  	<a class="dropdown-item has-icon" onclick="printBarcode()"><i class="fas fa-print"></i>Print Barcode Product</a>
 	  	<a class="dropdown-item has-icon" onclick="deleteAll()"><i class="fas fa-trash"></i>Hapus Semua Data</a>
       </div>
   </div>
@@ -30,7 +30,7 @@
               <th>No</th>
 	            <th>Kode</th>
 	            <th>Nama</th>
-	            <th>Kategori</th>
+	            <th>Category</th>
 	            <th>Merek</th>
 	            <th>Harga Beli</th>
 	            <th>Harga Jual</th>
@@ -91,7 +91,7 @@
 					dataType : "JSON",
 					success : function(data){
 						if(data.msg=="error"){
-							alert('Kode produk sudah terpakai');
+							alert('Product Code is used');
 							$('#product_code').focus().select();
 						}else{
 							$('#modal-form').modal('hide');
@@ -111,7 +111,7 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-		$('.modal-title').text('Tambah Produk');
+		$('.modal-title').text('Tambah Product');
 		$('#product_code').attr('readonly', false);
 	}
 	function editForm(id){
@@ -124,7 +124,7 @@
 			dataType	: "JSON",
 			success		: function(data){
 				$('#modal-form').modal('show');
-				$('.modal-title').text('Edit Produk');
+				$('.modal-title').text('Edit Product');
 
 				$('#id').val(data.product_id);
 				$('#product_code').val(data.product_code).attr('readonly', true);

@@ -13,8 +13,8 @@
       <thead>
          <tr>
             <th width="30">No</th>
-            <th>Kode Produk</th>
-            <th>Nama Produk</th>
+            <th>Product Code</th>
+            <th>Nama Product</th>
             <th>Harga</th>
             <th>Jumlah</th>
             <th>Sub Total</th>

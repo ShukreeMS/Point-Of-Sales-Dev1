@@ -11,7 +11,7 @@
                     <input type="hidden" id="id" name="id">
                     <div class="form-group form-float">
                         <div class="form-line">
-                        	<label class="form-label">Nama Kategori</label>
+                        	<label class="form-label">Nama Category</label>
                             <input type="text" class="form-control" id="category_name" name="category_name" autofocus required>
                         </div>
                     </div>

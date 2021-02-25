@@ -35,8 +35,8 @@
 <thead>
    <tr>
     <th>No</th>
-    <th>Kode Produk</th>
-    <th>Nama Produk</th>
+    <th>Product Code</th>
+    <th>Nama Product</th>
     <th>Harga Satuan</th>
     <th>Jumlah</th>
     <th>Diskon</th>
@@ -73,7 +73,7 @@
       <b>Terimakasih telah berbelanja dan sampai jumpa</b>
     </td>
     <td align="center">
-      Kasir<br><br><br> {{Auth::user()->name}}
+      Cashier<br><br><br> {{Auth::user()->name}}
     </td>
   </tr>
 </table>

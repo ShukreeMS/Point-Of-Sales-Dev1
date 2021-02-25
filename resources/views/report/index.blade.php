@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-    Laporan Pendapatan {{ indo_date($begin, false) }} - {{ indo_date($end, false) }}
+    Report Pendapatan {{ indo_date($begin, false) }} - {{ indo_date($end, false) }}
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
             <tr>
               <th width="30">No</th>
               <th>Tanggal</th>
-              <th>Penjualan</th>
+              <th>Sales</th>
               <th>Pembelian</th>
               <th>Pengeluaran</th>
               <th>Pendapatan</th>

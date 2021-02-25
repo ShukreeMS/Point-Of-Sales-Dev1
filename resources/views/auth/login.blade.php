@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <title>Login &mdash; POS</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('stisla/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -63,8 +63,8 @@
 
                   <div class="form-group">
                     <div class="custom-control custom-checkbox">
-                      <input class="form-check-input" type="checkbox" name="rememberme" id="rememberme" {{ old('rememberme') ? 'checked' : '' }} class="filled-in chk-col-pink">
-                      <label class="custom-control-label" for="remember-me">Remember Me</label>
+                      <input class="form-check-input" type="checkbox" name="rememberme" id="rememberme" {{ old('rememberme') ? 'checked' : '' }} class="chk-col-pink">
+                      <label class="custom-control" for="remember-me">Remember Me</label>
                     </div>
                   </div>
 
@@ -75,7 +75,7 @@
                     </button>
                   </div>
                 </form>
-                <div class="text-center mt-4 mb-3">
+               {{--  <div class="text-center mt-4 mb-3">
                   <div class="text-job text-muted">Login With Social</div>
                 </div>
                 <div class="row sm-gutters">
@@ -89,16 +89,16 @@
                       <span class="fab fa-twitter"></span> Twitter
                     </a>                                
                   </div>
-                </div>
+                </div> --}}
 
               </div>
             </div>
             <div class="mt-5 text-muted text-center">
-              Don't have an account? <a href="auth-register.html">Create One</a>
+              Don't have an account? <a href="register">Create One</a>
             </div>
-            <div class="simple-footer">
+            {{-- <div class="simple-footer">
               Copyright &copy; Stisla 2018
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
