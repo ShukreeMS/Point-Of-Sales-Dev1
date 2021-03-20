@@ -72,7 +72,7 @@
             <a href="index.html">St</a>
           </div>
           <ul class="sidebar-menu">
-          <li class="menu-header">Dashboard</li>      
+          <li class="menu-header"></li>      
             <li>
             <a class="nav-link" href="{{route('home')}}">
                 <i class="fas fa-columns"></i>
@@ -101,7 +101,7 @@
             <li>
                 <a class="nav-link" href="{{route('member.index')}}">
                     <i class="fas fa-credit-card"></i>
-                    <span>Member</span>
+                    <span>Customers</span>
                 </a>
             </li>
             <li>
@@ -123,6 +123,21 @@
                 </a>
             </li>
             <li>
+<<<<<<< Updated upstream
+=======
+              <a class="nav-link" href="{{route('member.index')}}">
+                  <i class="fas fa-file-invoice"></i>
+                  <span>Invoice</span>
+              </a>
+          </li>
+          <li>
+            <a class="nav-link" href="{{route('member.index')}}">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Invoice Product</span>
+            </a>
+        </li>
+            {{-- <li>
+>>>>>>> Stashed changes
                 <a class="nav-link" href="{{route('purchase.index')}}">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Pembelian</span>
@@ -138,13 +153,13 @@
             <li>
                 <a class="nav-link" href="{{route('transaction.index')}}">
                     <i class="fas fa-fire"></i>
-                    <span>Transaksi</span>
+                    <span>Transaction</span>
                 </a>
             </li>
             <li>
                 <a class="nav-link" href="{{route('transaction.new')}}">
                     <i class="fas fa-fire"></i>
-                    <span>Transaksi Baru</span>
+                    <span>New Transaction</span>
                 </a>
             </li>
             @endif

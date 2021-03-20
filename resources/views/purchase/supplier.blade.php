@@ -13,7 +13,7 @@
                                         <th>Nama Supplier</th>
                                         <th>Alamat</th>
                                         <th>Telepon</th>
-                                        <th>Aksi</th>
+                                        <th>action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,7 +31,7 @@
                     </div>
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">BATAL</button>
+	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancel</button>
 	            </div>
         </div>
     </div>

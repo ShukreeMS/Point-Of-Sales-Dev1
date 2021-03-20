@@ -15,7 +15,7 @@
             <th>Nama Member</th>
             <th>Alamat</th>
             <th>Telpon</th>
-            <th>Aksi</th>
+            <th>action</th>
          </tr>
       </thead>
       <tbody>

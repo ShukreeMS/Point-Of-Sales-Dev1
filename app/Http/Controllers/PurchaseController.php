@@ -32,11 +32,11 @@ class PurchaseController extends Controller
             $row[] = "Rp. ".currency_format($list->pay);
             $row[] = '<div class="dropdown d-inline">
                       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Aksi
+                        Action
                       </button>
                       <div class="dropdown-menu">
                         <a onclick="showDetail('.$list->purchase_id.')" class="dropdown-item has-icon"><i class="fas fa-eye"></i>Lihat Data</a>
-                        <a onclick="deleteData('.$list->purchase_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Hapus Data</a>
+                        <a onclick="deleteData('.$list->purchase_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Delete Data</a>
                       </div>';
             $data[] = $row;
         }

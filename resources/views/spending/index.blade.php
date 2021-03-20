@@ -23,7 +23,7 @@
                     <th>Tanggal</th>
                     <th>Jenis Pengeluaran</th>
                     <th>Nominal</th>
-                    <th>Kelola Data</th>
+                    <th>Manage Data</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,9 +40,9 @@
 	var table, save_method;
 	$(function(){
 		table = $('.table').DataTable({
-			"language": {
+			/* "language": {
             	"url" : "{{asset('tables_indo.json')}}",
-         	},
+         	}, */
 			"processing" : true,
 			"ajax" : {
 				"url"  : "{{route('spending.data')}}",

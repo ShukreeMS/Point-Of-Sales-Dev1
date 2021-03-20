@@ -12,8 +12,13 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+<<<<<<< Updated upstream
                                         <th>Kode Produk</th>
                                         <th>Nama Produk</th>
+=======
+                                        <th>Product Code</th>
+                                        <th>Product Name</th>
+>>>>>>> Stashed changes
                                         <th align="right">Harga</th>
                                         <th>Jumlah</th>
                                         <th align="center">Sub Total</th>
@@ -26,7 +31,7 @@
                     </div>
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">BATAL</button>
+	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancel</button>
 	            </div>
         </div>
     </div>

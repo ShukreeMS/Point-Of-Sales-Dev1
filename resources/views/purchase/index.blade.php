@@ -11,9 +11,9 @@
     <div class="dropdown d-inline">
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-        <a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Transaksi Baru</a>
+        <a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Transaction Baru</a>
         @if(!empty(session('purchase_id')))
-        <a class="dropdown-item has-icon" href="{{route('purchase_details.index')}}"><i class="fas fa-dollar-sign"></i>Transaksi Aktif</a>
+        <a class="dropdown-item has-icon" href="{{route('purchase_details.index')}}"><i class="fas fa-dollar-sign"></i>Transaction Aktif</a>
         @endif
       </div>
   </div>
@@ -28,9 +28,9 @@
                     <th>Supplier</th>
                     <th>Total Item</th>
                     <th>Total Harga</th>
-                    <th>Diskon</th>
+                    <th>Discount</th>
                     <th>Total Bayar</th>
-                    <th>Kelola Data</th>
+                    <th>Manage Data</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -47,9 +47,9 @@
 	var table, save_method, table1;
 	$(function(){
 		table = $('.table-purchase').DataTable({
-			"language": {
+			/* "language": {
             	"url" : "{{asset('tables_indo.json')}}",
-         	},
+         	}, */
 			"processing" : true,
 			"serverside" : true,
 			"ajax" : {

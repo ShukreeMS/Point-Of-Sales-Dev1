@@ -28,13 +28,18 @@
             <thead>
               <tr>
                 <th width="30">No</th>
+<<<<<<< Updated upstream
                 <th>Kode Produk</th>
                 <th>Nama Produk</th>
+=======
+                <th>Product Code</th>
+                <th>Product Name</th>
+>>>>>>> Stashed changes
                 <th>Harga</th>
                 <th>Jumlah</th>
-                <th>Diskon</th>
+                <th>Discount</th>
                 <th>Sub Total</th>
-                <th width="100">Aksi</th>
+                <th width="100">action</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -99,7 +104,7 @@
           
     <div class="box-footer">
       <button type="submit" class="btn btn-primary pull-right save float-right mb-5 mr-4">
-        Simpan Transaksi
+        Save Transaction
       </button>
     </div>
   </div>

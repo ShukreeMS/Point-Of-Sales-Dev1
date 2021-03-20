@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content-header')
-  Transaksi Berhasil!
+  Transaction Berhasil!
 @endsection
 
 @section('breadcrumb')
    @parent  
-   <li>Transaksi</li>
+   <li>Transaction</li>
    <li>Selesai</li>
 @endsection
 
@@ -15,7 +15,7 @@
       <div class="card-body text-center">
           <div class="alert alert-success alert-dismissible">
             <i class="icon fa fa-check"></i>
-            Data Transaksi telah disimpan.
+            Data Transaction telah diSave.
           </div>
 
           <br><br>
@@ -30,7 +30,7 @@
               }              
             </script>
           @endif
-          <a class="btn btn-primary btn-lg" href="{{ route('transaction.new') }}">Transaksi Baru</a>
+          <a class="btn btn-primary btn-lg" href="{{ route('transaction.new') }}">Transaction Baru</a>
           <br><br><br><br>
   </div>
 </div>

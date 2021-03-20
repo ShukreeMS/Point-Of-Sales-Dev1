@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-Transaksi Pembelian
+Transaction Pembelian
 @endsection
 
 @section('content')
@@ -44,12 +44,17 @@ Transaksi Pembelian
                 <thead>
                     <tr>
                         <th width="30">No</th>
+<<<<<<< Updated upstream
                         <th>Kode Produk</th>
                         <th>Nama Produk</th>
+=======
+                        <th>Product Code</th>
+                        <th>Product Name</th>
+>>>>>>> Stashed changes
                         <th>Harga</th>
                         <th>Jumlah</th>
                         <th>Sub Total</th>
-                        <th width="100">Aksi</th>
+                        <th width="100">action</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -79,7 +84,7 @@ Transaksi Pembelian
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <div class="section-title">Diskon</div>
+                        <div class="section-title">Discount</div>
                         <input type="number" class="form-control" id="discount" name="discount" value="0">
                     </div>
                 </div>
@@ -90,7 +95,7 @@ Transaksi Pembelian
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-outline-primary save">SIMPAN TRANSAKSI</button>
+                    <button type="submit" class="btn btn-outline-primary save">Save Transaction</button>
                 </div>
             </form>
         </div>

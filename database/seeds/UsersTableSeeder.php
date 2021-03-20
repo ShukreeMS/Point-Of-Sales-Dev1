@@ -25,6 +25,13 @@ class UsersTableSeeder extends Seeder
         		'password'	=>	bcrypt('qwertyuiop'),
         		'photos'	=>	'avatar.png',
         		'level'		=>	2
+			],
+			[
+        		'name'		=>	'Simon Jet',
+        		'email'		=>	'simon2@gmail.com',
+        		'password'	=>	bcrypt('hobbit79'),
+        		'photos'	=>	'avatar.png',
+        		'level'		=>	1
         	]
         ));
     }

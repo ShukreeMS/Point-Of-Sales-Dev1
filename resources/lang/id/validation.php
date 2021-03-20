@@ -96,7 +96,7 @@ return [
     'password' => 'Isian password salah.',
     'present' => 'Isian :attribute field harus ada.',
     'regex' => 'Isian :attribute format tidak valid.',
-    'required' => 'Isian :attribute field wajib diisi.',
+    'required' => 'Input for :attribute field is required.',
     'required_if' => 'Isian :attribute field wajib diisi bila :other adalah :value.',
     'required_unless' => 'Isian :attribute field wajib diisi kecuali :other ada di :values.',
     'required_with' => 'Isian :attribute field wajib diisi bila terdapat :values.',

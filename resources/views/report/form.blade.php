@@ -31,8 +31,8 @@
 </div>
    
    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
-      <button type="submit" class="btn btn-primary btn-save">SIMPAN</button>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      <button type="submit" class="btn btn-primary btn-save">Save</button>
    </div>
       
    </form>

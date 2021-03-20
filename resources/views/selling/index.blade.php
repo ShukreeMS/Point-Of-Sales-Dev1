@@ -17,10 +17,15 @@
                     <th>Kode Member</th>
                     <th>Total Item</th>
                     <th>Total Harga</th>
-                    <th>Diskon</th>
+                    <th>Discount</th>
                     <th>Total Bayar</th>
+<<<<<<< Updated upstream
                     <th>Kasir</th>
                     <th>Kelola Data</th>
+=======
+                    <th>Cashier</th>
+                    <th>Manage Data</th>
+>>>>>>> Stashed changes
                 </tr>
             </thead>
             <tbody></tbody>
@@ -36,9 +41,9 @@
 	var table, save_method, table1;
 	$(function(){
 		table = $('.table-selling').DataTable({
-            "language": {
+            /* "language": {
             "url" : "{{asset('tables_indo.json')}}",
-            },
+            }, */
             "processing" : true,
             "serverside" : true,
 			"ajax" : {

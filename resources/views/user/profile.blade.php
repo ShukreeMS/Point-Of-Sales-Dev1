@@ -15,7 +15,7 @@
   <div class="alert alert-info alert-dismissible" style="display:none">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="icon fa fa-check"></i>
-    Perubahan berhasil disimpan.
+    Perubahan berhasil diSave.
   </div>
 
  <div class="form-group row align-items-center">
@@ -58,7 +58,7 @@
 
   </div>
   <div class="card-footer bg-whitesmoke text-md-right">
-    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-floppy-o"></i> Simpan Perubahan</button>
+    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-floppy-o"></i> Save Perubahan</button>
   </div>
 </form>
   </div>

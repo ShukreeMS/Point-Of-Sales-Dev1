@@ -35,11 +35,16 @@
 <thead>
    <tr>
     <th>No</th>
+<<<<<<< Updated upstream
     <th>Kode Produk</th>
     <th>Nama Produk</th>
+=======
+    <th>Product Code</th>
+    <th>Product Name</th>
+>>>>>>> Stashed changes
     <th>Harga Satuan</th>
     <th>Jumlah</th>
-    <th>Diskon</th>
+    <th>Discount</th>
     <th>Subtotal</th>
    </tr>
 
@@ -60,7 +65,7 @@
    </tbody>
    <tfoot>
     <tr><td colspan="6" align="right"><b>Total Harga</b></td><td align="right"><b>{{ currency_format($selling->total_price) }}</b></td></tr>
-    <tr><td colspan="6" align="right"><b>Diskon</b></td><td align="right"><b>{{ currency_format($selling->discount) }}%</b></td></tr>
+    <tr><td colspan="6" align="right"><b>Discount</b></td><td align="right"><b>{{ currency_format($selling->discount) }}%</b></td></tr>
     <tr><td colspan="6" align="right"><b>Total Bayar</b></td><td align="right"><b>{{ currency_format($selling->pay) }}</b></td></tr>
     <tr><td colspan="6" align="right"><b>Diterima</b></td><td align="right"><b>{{ currency_format($selling->received) }}</b></td></tr>
     <tr><td colspan="6" align="right"><b>Kembali</b></td><td align="right"><b>{{ currency_format($selling->received - $selling->pay) }}</b></td></tr>

@@ -48,9 +48,9 @@
 var table, begin, end;
 $(function(){
    table = $('.table-report').DataTable({
-     "language": {
+     /* "language": {
         "url" : "{{asset('tables_indo.json')}}",
-     },
+     }, */
      "dom" : 'Brt',
      "bSort" : false,
      "bPaginate" : false,

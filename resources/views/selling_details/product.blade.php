@@ -11,10 +11,17 @@
 	<table class="table table-striped table-product">
 		<thead>
 		   <tr>
+<<<<<<< Updated upstream
 		      <th>Kode Produk</th>
 		      <th>Nama Produk</th>
 		      <th>Harga Beli</th>
 		      <th>Aksi</th>
+=======
+		      <th>Product Code</th>
+		      <th>Product Name</th>
+		      <th>Purchase Price</th>
+		      <th>action</th>
+>>>>>>> Stashed changes
 		   </tr>
 		</thead>
 		<tbody>

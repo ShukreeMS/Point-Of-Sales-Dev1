@@ -11,7 +11,7 @@
   	<div class="dropdown d-inline">
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Supplier</a>
+      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Supplier</a>
       </div>
 </div>
   <div class="card-body">
@@ -21,10 +21,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Supplier</th>
-                        <th>Alamat</th>
-                        <th>Nomor Telepon</th>
-                        <th width="100">Kelola Data</th>
+                        <th>Supplier Name</th>
+                        <th>Address</th>
+                        <th>Telephone Number</th>
+                        <th width="100">Manage Data</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,9 +42,9 @@
 	var table, save_method;
 	$(function(){
 		table = $('.table').DataTable({
-			"language": {
+			/* "language": {
             	"url" : "{{asset('tables_indo.json')}}",
-         	},
+         	}, */
 			"processing" : true,
 			"ajax" : {
 				"url"  : "{{route('supplier.data')}}",
@@ -66,7 +66,7 @@
 						table.ajax.reload();
 					},
 					error : function(){
-						alert("Tidak dapat menyimpan data");
+						alert("Unable to save data");
 					}
 				});
 				return false;
@@ -78,7 +78,7 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-		$('.modal-title').text('Tambah Supplier');
+		$('.modal-title').text('Add Supplier');
 	}
 	function editForm(id){
 		save_method = "edit";
@@ -98,13 +98,13 @@
 				$('#supplier_phone_number').val(data.supplier_phone_number);
 			},
 			error		: function(){
-				alert("Tidak dapat menampilkan data!");
+				alert("Unabel to edit data!");
 			}
 		});
 	}
 
 	function deleteData(id){
-		if(confirm("Apakah yakin data akan dihapus?")){
+		if(confirm("Are you sure to delete this data?")){
 			$.ajax({
 				url		: "supplier/"+id,
 				type 	: "POST",
@@ -113,7 +113,7 @@
 					table.ajax.reload();
 				},
 				error	: function(){
-					alert("Tidak dapat menghapus data");
+					alert("Unable to delete this data");
 				} 
 			});
 		}

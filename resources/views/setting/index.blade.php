@@ -10,7 +10,7 @@
   <div class="alert alert-info alert-dismissible" style="display:none">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="icon fa fa-check"></i>
-    Perubahan berhasil disimpan.
+    Perubahan berhasil diSave.
   </div>
   <div class="card" id="settings-card">
     <div class="card-body">
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="form-group row align-items-center">
-        <label for="member_discount" class="form-control-label col-sm-3">Diskon Member (%)</label>
+        <label for="member_discount" class="form-control-label col-sm-3">Discount Member (%)</label>
         <div class="col-sm-6 col-md-9">
           <input type="number" name="member_discount" class="form-control" id="member_discount">
           <span class="help-block with-errors"></span>

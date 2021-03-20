@@ -12,7 +12,7 @@
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i>
       </button>
       <div class="dropdown-menu">
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Member</a>
+      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Member</a>
 	  	<a class="dropdown-item has-icon" onclick="printCard()"><i class="fas fa-print"></i>Print Kartu Member</a>
       </div>
   </div>
@@ -32,7 +32,7 @@
                     <th>Nama Member</th>
                     <th>Alamat</th>
                     <th>Nomor Telepon</th>
-                    <th>Kelola Data</th>
+                    <th>Manage Data</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,9 +50,9 @@
 	var table, save_method;
 	$(function(){
 		table = $('.table').DataTable({
-			"language": {
+			/* "language": {
             	"url" : "{{asset('tables_indo.json')}}",
-         	},
+         	}, */
 			"processing" : true,
 			"serverside" : true,
 			"ajax" : {
@@ -104,7 +104,7 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-		$('.modal-title').text('Tambah Member');
+		$('.modal-title').text('Add Member');
 		$('#member_code').attr('readonly', false);
 	}
 	function editForm(id){
@@ -149,7 +149,7 @@
 
 	function printCard(){
 		if ($('input:checked').length < 1) {
-			alert('Pilih data yang akan dicetak!');
+			alert('Please select the data to be print barcode');
 		}else{
 			$('#form-member').attr('target', '_blank').attr('action', "member/print/").submit();
 		}
