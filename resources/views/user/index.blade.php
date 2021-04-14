@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-	Kasir
+	Cashier
 @endsection
 
 @section('content')

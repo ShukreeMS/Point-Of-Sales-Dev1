@@ -8,7 +8,7 @@
    </div>
             
 <div class="modal-body">
-   <table class="table table-striped tabel-produk">
+   <table class="table table-striped tabel-Product">
       <thead>
          <tr>
             <th>Kode Member</th>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Redirect;
+use Illuminate\Support\Facades\Redirect;
 use App\Purchase;
 use App\Supplier;
 use App\PurchaseDetails;

@@ -13,15 +13,10 @@
       <thead>
          <tr>
             <th width="30">No</th>
-<<<<<<< Updated upstream
-            <th>Kode Produk</th>
-            <th>Nama Produk</th>
-=======
             <th>Product Code</th>
             <th>Product Name</th>
->>>>>>> Stashed changes
-            <th>Harga</th>
-            <th>Jumlah</th>
+            <th>Price</th>
+            <th>Total</th>
             <th>Sub Total</th>
          </tr>
       </thead>

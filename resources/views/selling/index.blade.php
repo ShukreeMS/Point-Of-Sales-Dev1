@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-    Penjualan
+    Sales
 @endsection
 
 @section('content')
@@ -19,13 +19,8 @@
                     <th>Total Harga</th>
                     <th>Discount</th>
                     <th>Total Bayar</th>
-<<<<<<< Updated upstream
-                    <th>Kasir</th>
-                    <th>Kelola Data</th>
-=======
                     <th>Cashier</th>
                     <th>Manage Data</th>
->>>>>>> Stashed changes
                 </tr>
             </thead>
             <tbody></tbody>

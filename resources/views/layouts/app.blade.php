@@ -28,13 +28,13 @@
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
           </ul>
           <div class="search-element">
-            <input class="form-control" type="search" placeholder="Pencarian" aria-label="Search" data-width="250">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
             <div class="search-backdrop"></div>
             <div class="search-result">
               <div class="search-item">
-                <a href="#">Kolom pencarian ini hanya hiasan, jangan berharap lebih :(</a>
-                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+                {{-- <a href="#">Kolom pencarian ini hanya hiasan, jangan berharap lebih :(</a>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a> --}}
               </div>
             </div>
           </div>
@@ -66,11 +66,11 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="index.html">POS</a>
           </div>
-          <div class="sidebar-brand sidebar-brand-sm">
+          {{-- <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
-          </div>
+          </div> --}}
           <ul class="sidebar-menu">
           <li class="menu-header"></li>      
             <li>
@@ -83,13 +83,13 @@
             <li>
                 <a class="nav-link" href="{{route('category.index')}}">
                     <i class="fas fa-boxes"></i>
-                    <span>Kategori</span>
+                    <span>Category</span>
                 </a>
             </li>
             <li>
                 <a class="nav-link" href="{{route('product.index')}}">
                     <i class="fas fa-box"></i>
-                    <span>Produk</span>
+                    <span>Product</span>
                 </a>
             </li>
             <li>
@@ -104,27 +104,27 @@
                     <span>Customers</span>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a class="nav-link" href="{{route('spending.index')}}">
                     <i class="fas fa-hand-holding-usd"></i>
                     <span>Pengeluaran</span>
                 </a>
-            </li>
+            </li> --}}
             <li>
                 <a class="nav-link" href="{{route('user.index')}}">
                     <i class="fas fa-users"></i>
-                    <span>Kasir</span>
+                    <span>Cashier</span>
                 </a>
             </li>
             <li>
                 <a class="nav-link" href="{{route('selling.index')}}">
                     <i class="fas fa-store-alt"></i>
-                    <span>Penjualan</span>
+                    <span>Sales</span>
                 </a>
             </li>
+
             <li>
-<<<<<<< Updated upstream
-=======
+
               <a class="nav-link" href="{{route('member.index')}}">
                   <i class="fas fa-file-invoice"></i>
                   <span>Invoice</span>
@@ -137,16 +137,18 @@
             </a>
         </li>
             {{-- <li>
->>>>>>> Stashed changes
+
+            {{-- <li>
+
                 <a class="nav-link" href="{{route('purchase.index')}}">
                     <i class="fas fa-shopping-cart"></i>
-                    <span>Pembelian</span>
+                    <span>Purchase</span>
                 </a>
-            </li>
+            </li> --}}
             <li>
                 <a class="nav-link" href="{{route('report.index')}}">
                     <i class="fas fa-file-alt"></i>
-                    <span>Laporan</span>
+                    <span>Report</span>
                 </a>
             </li>
             @else
@@ -181,7 +183,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+          {{-- Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> --}}
         </div>
         <div class="footer-right">
           

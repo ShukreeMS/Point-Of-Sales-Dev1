@@ -6,7 +6,7 @@ use App\Purchase;
 use App\Selling;
 use App\Spending;
 
-use PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ReportController extends Controller
 {

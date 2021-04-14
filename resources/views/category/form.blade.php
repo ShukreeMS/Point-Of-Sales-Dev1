@@ -11,16 +11,17 @@
                     <input type="hidden" id="id" name="id">
                     <div class="form-group form-float">
                         <div class="form-line">
-<<<<<<< Updated upstream
-                        	<label class="form-label">Nama Kategori</label>
+
+                        	<label class="form-label">Category Name</label>
+
                             <input type="text" class="form-control" id="category_name" name="category_name" autofocus required>
-=======
+
                         	<label class="form-label" for="validationCustom01">Category Name</label>
                             <input type="text" class="form-control" id="validationCustom01" name="category_name" autofocus required>
                             <div class="invalid-feedback">
                                 Please provide a valid Name.
                             </div>
->>>>>>> Stashed changes
+
                         </div>
                     </div>
 	            </div>

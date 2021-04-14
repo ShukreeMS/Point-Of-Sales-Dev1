@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="defaultModalLabel">Detail Penjualan</h4>
+                <h4 class="modal-title" id="defaultModalLabel">Detail Sales</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> &times; </span> </button>
             </div>
 				
@@ -12,15 +12,12 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-<<<<<<< Updated upstream
-                                        <th>Kode Produk</th>
-                                        <th>Nama Produk</th>
-=======
                                         <th>Product Code</th>
                                         <th>Product Name</th>
->>>>>>> Stashed changes
-                                        <th align="right">Harga</th>
-                                        <th>Jumlah</th>
+                                        <th>Product Code</th>
+                                        <th>Nama Product</th>
+                                        <th align="right">Price</th>
+                                        <th>Total</th>
                                         <th align="center">Sub Total</th>
                                     </tr>
                                 </thead>

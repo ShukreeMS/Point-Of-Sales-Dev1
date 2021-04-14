@@ -35,15 +35,10 @@
 <thead>
    <tr>
     <th>No</th>
-<<<<<<< Updated upstream
-    <th>Kode Produk</th>
-    <th>Nama Produk</th>
-=======
     <th>Product Code</th>
     <th>Product Name</th>
->>>>>>> Stashed changes
-    <th>Harga Satuan</th>
-    <th>Jumlah</th>
+    <th>Selling Price</th>
+    <th>Total</th>
     <th>Discount</th>
     <th>Subtotal</th>
    </tr>
@@ -78,7 +73,7 @@
       <b>Terimakasih telah berbelanja dan sampai jumpa</b>
     </td>
     <td align="center">
-      Kasir<br><br><br> {{Auth::user()->name}}
+      Cashier<br><br><br> {{Auth::user()->name}}
     </td>
   </tr>
 </table>

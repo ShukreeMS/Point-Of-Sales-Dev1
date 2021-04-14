@@ -13,7 +13,7 @@
           </div>
           <div class="card-wrap">
               <div class="card-header">
-                <h4>Total Kategori</h4>
+                <h4>Total Category</h4>
               </div>
           </div>
           <div class="card-body">
@@ -28,7 +28,7 @@
           </div>
           <div class="card-wrap">
               <div class="card-header">
-                <h4>Total Produk</h4>
+                <h4>Total Product</h4>
               </div>
           </div>
           <div class="card-body">

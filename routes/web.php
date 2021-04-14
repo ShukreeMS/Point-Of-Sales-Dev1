@@ -1,6 +1,4 @@
 <?php
-<<<<<<< Updated upstream
-=======
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -16,11 +14,12 @@ use App\Http\Controllers\SpendingController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\Auth\RegisterController;
 
 use App\Category;
 use App\User;
 use Illuminate\Support\Facades\Auth;
->>>>>>> Stashed changes
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,16 +32,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//  Route::get('/', function () {
+//      return view('welcome');
+//  });
 
 // Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-<<<<<<< Updated upstream
-=======
+
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -69,6 +67,7 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
+
 /* Route::get('purchase/{id}/show', 'RegisterController@create');
 Route::view('/register', 'register');
 Route::get('/register', function () {
@@ -76,7 +75,6 @@ Route::get('/register', function () {
 }); */
 
 
->>>>>>> Stashed changes
 Route::group(['middleware' => ['web', 'usercheck:1']], function(){
 	Route::get('category/data', 'CategoryController@listData')->name('category.data');
 	Route::resource('category', 'CategoryController');

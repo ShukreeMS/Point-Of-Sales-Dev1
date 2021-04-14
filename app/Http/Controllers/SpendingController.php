@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Spending;
 use Illuminate\Http\Request;
-use DataTables;
+use Yajra\Datatables\Datatables;
 
 class SpendingController extends Controller
 {

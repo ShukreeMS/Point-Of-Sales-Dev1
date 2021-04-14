@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-	Kategori
+	Category
 @endsection
 
 @section('content')
@@ -16,11 +16,7 @@
   	<div class="dropdown d-inline">
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-<<<<<<< Updated upstream
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Kategori</a>
-=======
       	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Category</a>
->>>>>>> Stashed changes
       </div>
 </div>
   <div class="card-body">
@@ -29,13 +25,8 @@
         	<thead>
          <tr>
                 <th>No</th>
-<<<<<<< Updated upstream
-                <th>Nama Kategori</th>
-                <th>Kelola Data</th>
-=======
                 <th>Category Name</th>
                 <th>Manage Data</th>
->>>>>>> Stashed changes
          </tr>
          </thead>
          <tbody></tbody>
@@ -88,11 +79,8 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-<<<<<<< Updated upstream
-		$('.modal-title').text('Tambah Kategori');
-=======
 		$('.modal-title').text('Add Category');
->>>>>>> Stashed changes
+
 	}
 	function editForm(id){
 		save_method = "edit";
@@ -104,7 +92,7 @@
 			dataType	: "JSON",
 			success		: function(data){
 				$('#modal-form').modal('show');
-				$('.modal-title').text('Edit Kategori');
+				$('.modal-title').text('Edit Category');
 
 				$('#id').val(data.category_id);
 				$('#category_name').val(data.category_name);

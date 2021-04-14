@@ -4,24 +4,17 @@
 	  
    <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> &times; </span> </button>
-      <h3 class="modal-title">Cari Produk</h3>
+      <h3 class="modal-title">Cari Product</h3>
    </div>
 				
 <div class="modal-body">
 	<table class="table table-striped table-product">
 		<thead>
 		   <tr>
-<<<<<<< Updated upstream
-		      <th>Kode Produk</th>
-		      <th>Nama Produk</th>
-		      <th>Harga Beli</th>
-		      <th>Aksi</th>
-=======
 		      <th>Product Code</th>
 		      <th>Product Name</th>
 		      <th>Purchase Price</th>
 		      <th>action</th>
->>>>>>> Stashed changes
 		   </tr>
 		</thead>
 		<tbody>

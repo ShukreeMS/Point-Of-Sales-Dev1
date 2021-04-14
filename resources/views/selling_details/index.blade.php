@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-  Detail Penjualan
+  Detail Sales
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
       <form class="form form-horizontal form-product" method="post">
         {{ csrf_field() }}  
         <input type="hidden" name="selling_id" value="{{ $selling_id }}">
-          <div class="section-title">Kode Produk</div>
+          <div class="section-title">Product Code</div>
           <div class="form-group">
             <div class="input-group mb-3">
               <input id="product_code" name="product_code" type="text" class="form-control" placeholder="" aria-label="" autofocus required>
@@ -28,15 +28,10 @@
             <thead>
               <tr>
                 <th width="30">No</th>
-<<<<<<< Updated upstream
-                <th>Kode Produk</th>
-                <th>Nama Produk</th>
-=======
                 <th>Product Code</th>
                 <th>Product Name</th>
->>>>>>> Stashed changes
-                <th>Harga</th>
-                <th>Jumlah</th>
+                <th>Price</th>
+                <th>Total</th>
                 <th>Discount</th>
                 <th>Sub Total</th>
                 <th width="100">action</th>

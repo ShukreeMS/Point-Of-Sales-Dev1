@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
-use DataTables;
-use PDF;
+use Yajra\Datatables\Datatables;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ProductController extends Controller
 {

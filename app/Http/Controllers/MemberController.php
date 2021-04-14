@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Member;
-use PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
