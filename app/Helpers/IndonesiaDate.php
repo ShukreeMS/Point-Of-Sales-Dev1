@@ -1,7 +1,7 @@
 <?php
-function indo_date($dt, $appear_day = true){
-	$day_name = array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu");
-	$month_name = array(1=>"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember");
+function en_date($dt, $appear_day = true){
+	$day_name = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+	$month_name = array(1=>"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
 	$year = substr($dt, 0, 4);
 	$month = $month_name[(int)substr($dt, 5, 2)];

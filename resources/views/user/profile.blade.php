@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-	Profil
+	Profile
 @endsection
 
 @section('content')     
@@ -15,11 +15,11 @@
   <div class="alert alert-info alert-dismissible" style="display:none">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="icon fa fa-check"></i>
-    Perubahan berhasil diSave.
+    Changes saved!
   </div>
 
  <div class="form-group row align-items-center">
-    <label class="form-control-label col-sm-3">Foto Profil</label>
+    <label class="form-control-label col-sm-3">Profile Photo</label>
     <div class="col-sm-6 col-md-9">
       <div class="show-photo">
           <img src="{{ asset('images/'.Auth::user()->photos) }}" width="200">
@@ -33,7 +33,7 @@
   </div>
     
   <div class="form-group row align-items-center">
-    <label for="old_password" class="form-control-label col-sm-3">Password Lama</label>
+    <label for="old_password" class="form-control-label col-sm-3">Old Password</label>
     <div class="col-sm-6 col-md-9">
       <input type="password" name="old_password" class="form-control" id="old_password">
       <span class="help-block with-errors"></span>
@@ -41,7 +41,7 @@
   </div>
 
   <div class="form-group row align-items-center">
-    <label for="password" class="form-control-label col-sm-3">Password Baru</label>
+    <label for="password" class="form-control-label col-sm-3">New Password</label>
     <div class="col-sm-6 col-md-9">
       <input type="password" name="password" class="form-control" id="password">
       <span class="help-block with-errors"></span>
@@ -49,7 +49,7 @@
   </div>
 
   <div class="form-group row align-items-center">
-      <label for="loop_password" class="form-control-label col-sm-3">Ulangi Password Baru</label>
+      <label for="loop_password" class="form-control-label col-sm-3">Repeat New Password</label>
       <div class="col-sm-6 col-md-9">
          <input type="password" class="form-control" data-match="#password" name="loop_password" id="loop_password">
          <span class="help-block with-errors"></span>
@@ -58,7 +58,7 @@
 
   </div>
   <div class="card-footer bg-whitesmoke text-md-right">
-    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-floppy-o"></i> Save Perubahan</button>
+    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-floppy-o"></i> Save Changes</button>
   </div>
 </form>
   </div>

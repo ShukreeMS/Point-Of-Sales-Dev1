@@ -68,7 +68,7 @@
       </div>
 </div>
 
-    <div class="row">
+    {{-- <div class="row">
               <div class="card">
                 <div class="card-header">
               <h4>Income Graph from {{ ($begin) }} to {{ ($end) }}</h4>
@@ -78,13 +78,13 @@
             <canvas id="salesChart" height="400" width="1000"></canvas>
               </div>
             </div>
-{{--             <div class="card-body">
+            <div class="card-body">
               <div class="chart">
                     <canvas id="salesChart" style="height: 250px;"></canvas>
-                </div>
-            </div> --}}
+              </div>
+            </div>
         </div>
-</div>
+    </div> --}}
 
 @endsection
 

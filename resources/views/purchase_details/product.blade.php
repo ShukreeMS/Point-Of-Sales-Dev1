@@ -13,7 +13,7 @@
                                         <th>Product Code</th>
                                         <th>Product Name</th>
                                         <th>Purchase Price</th>
-                                        <th>action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

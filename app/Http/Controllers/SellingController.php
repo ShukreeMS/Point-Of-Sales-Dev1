@@ -21,7 +21,7 @@ class SellingController extends Controller
             $no ++;
             $row = array();
             $row[] = $no;
-            $row[] = indo_date(substr($list->date, 0, 10), false);
+            $row[] = en_date(substr($list->date, 0, 10), false);
             $row[] = $list->member_code;
             $row[] = $list->total_item;
             $row[] = "Rp. ".currency_format($list->total_price);

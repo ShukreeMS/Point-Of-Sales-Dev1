@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-  Pengaturan
+  Settings
 @endsection
 
 @section('content')     
@@ -10,33 +10,33 @@
   <div class="alert alert-info alert-dismissible" style="display:none">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="icon fa fa-check"></i>
-    Perubahan berhasil diSave.
+    Changed need to be saved.
   </div>
   <div class="card" id="settings-card">
     <div class="card-body">
       <div class="form-group row align-items-center">
-        <label for="company_name" class="form-control-label col-sm-3">Nama Perusahaan</label>
+        <label for="company_name" class="form-control-label col-sm-3">Company Name</label>
         <div class="col-sm-6 col-md-9">
           <input type="text" name="company_name" class="form-control" id="company_name">
           <span class="help-block with-errors"></span>
         </div>
       </div>
       <div class="form-group row align-items-center">
-        <label for="company_address" class="form-control-label col-sm-3">Alamat Perusahaan</label>
+        <label for="company_address" class="form-control-label col-sm-3">Company Address</label>
         <div class="col-sm-6 col-md-9">
           <textarea class="form-control" name="company_address" id="company_address"></textarea>
           <span class="help-block with-errors"></span>
         </div>
       </div>
       <div class="form-group row align-items-center">
-        <label for="company_phone_number" class="form-control-label col-sm-3">Telepon Perusahaan</label>
+        <label for="company_phone_number" class="form-control-label col-sm-3">Company Telephone</label>
         <div class="col-sm-6 col-md-9">
           <input type="text" name="company_phone_number" class="form-control" id="company_phone_number">
           <span class="help-block with-errors"></span>
         </div>
       </div>
       <div class="form-group row align-items-center">
-        <label class="form-control-label col-sm-3">Logo Perusahaan</label>
+        <label class="form-control-label col-sm-3">Company Logo</label>
         <div class="col-sm-6 col-md-9">
           <div class="show-logo"></div>
           <div class="custom-file">
@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="form-group row align-items-center">
-        <label class="form-control-label col-sm-3">Desain Kartu Member</label>
+        <label class="form-control-label col-sm-3">Member Card Design</label>
         <div class="col-sm-6 col-md-9">
           <div class="show-card"></div>
           <div class="custom-file">
@@ -68,11 +68,11 @@
       </div>
     
     <div class="form-group row align-items-center">
-     <label for="note_type" class="form-control-label col-sm-3">Tipe Nota</label>
+     <label for="note_type" class="form-control-label col-sm-3">Note type</label>
     <div class="col-sm-6 col-md-9">
       <select id="note_type" class="form-control" name="note_type">
-        <option value="0">Nota Kecil</option>
-        <option value="1">Nota Besar (PDF)</option>
+        <option value="0">Small Note</option>
+        <option value="1">Big Note (PDF)</option>
       </select>
       <span class="help-block with-errors"></span>
     </div>

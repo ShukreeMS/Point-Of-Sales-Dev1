@@ -6,19 +6,19 @@
 </head>
 <body>
  
-<h3 class="text-center">Report Pendapatan</h3>
-<h4 class="text-center">Tanggal  {{ indo_date($date_begin) }} s/d {{ indo_date($date_end) }} </h4>
+<h3 class="text-center">Income Report</h3>
+<h4 class="text-center">Date  {{ indo_date($date_begin) }} s/d {{ indo_date($date_end) }} </h4>
 
          
 <table class="table table-striped">
 <thead>
    <tr>
     <th>No</th>
-    <th>Tanggal</th>
+    <th>Date</th>
     <th>Sales</th>
-    <th>Pembelian</th>
-    <th>Pengeluaran</th>
-    <th>Pendapatan</th>
+    <th>Purchase</th>
+    <th>Export</th>
+    <th>Income</th>
    </tr>
 </thead>
    <tbody>

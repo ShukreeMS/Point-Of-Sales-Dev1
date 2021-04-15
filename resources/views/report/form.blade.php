@@ -6,14 +6,14 @@
    {{ csrf_field() }}
    
    <div class="modal-header">
-      <h4 class="modal-title">Periode Report</h4>
+      <h4 class="modal-title">Report Period</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> &times; </span> </button>
    </div>
             
 <div class="modal-body">
    
    <div class="form-group">
-      <label for="begin">Tanggal Awal</label>
+      <label for="begin">Start Date</label>
       <div class="col-md-6">
          <input id="begin" type="date" class="form-control" name="begin" autofocus required>
          <span class="help-block with-errors"></span>
@@ -21,7 +21,7 @@
    </div>
 
    <div class="form-group">
-      <label for="end">Tanggal Akhir</label>
+      <label for="end">End Date</label>
       <div class="col-md-6">
          <input id="end" type="date" class="form-control" name="end" autofocus required>
          <span class="help-block with-errors"></span>

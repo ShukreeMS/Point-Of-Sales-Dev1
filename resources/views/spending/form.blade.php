@@ -11,7 +11,7 @@
                     <input type="hidden" id="id" name="id">
                     <div class="form-group form-float">
                         <div class="form-line">
-                        	<label class="form-label">Jenis Pengeluaran</label>
+                        	<label class="form-label">Spending Type</label>
                             <input type="text" class="form-control" id="spending_type" name="spending_type" autofocus required>
                         </div>
                     </div>

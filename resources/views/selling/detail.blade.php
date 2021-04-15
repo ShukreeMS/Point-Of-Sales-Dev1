@@ -14,8 +14,6 @@
                                         <th>No</th>
                                         <th>Product Code</th>
                                         <th>Product Name</th>
-                                        <th>Product Code</th>
-                                        <th>Nama Product</th>
                                         <th align="right">Price</th>
                                         <th>Total</th>
                                         <th align="center">Sub Total</th>

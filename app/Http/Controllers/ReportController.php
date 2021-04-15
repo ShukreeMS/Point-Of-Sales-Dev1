@@ -36,7 +36,7 @@ class ReportController extends Controller
        $no ++;
        $row = array();
        $row[] = $no;
-       $row[] = indo_date($date, false);
+       $row[] = en_date($date, false);
        $row[] = currency_format($total_selling);
        $row[] = currency_format($total_purchase);
        $row[] = currency_format($total_spending);

@@ -13,7 +13,7 @@
       </button>
       <div class="dropdown-menu">
       	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Member</a>
-	  	<a class="dropdown-item has-icon" onclick="printCard()"><i class="fas fa-print"></i>Print Kartu Member</a>
+	  	<a class="dropdown-item has-icon" onclick="printCard()"><i class="fas fa-print"></i>Print Member Card</a>
       </div>
   </div>
   <div class="card-body">
@@ -28,10 +28,10 @@
                       	<label for="ig_checkbox"></label>
                   	</th>
                     <th>No</th>
-                    <th>Kode Member</th>
-                    <th>Nama Member</th>
-                    <th>Alamat</th>
-                    <th>Nomor Telepon</th>
+                    <th>Member Code</th>
+                    <th>Member Name</th>
+                    <th>Address</th>
+                    <th>Telephone</th>
                     <th>Manage Data</th>
                 </tr>
             </thead>

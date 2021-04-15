@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-	Pengeluaran
+	Spending
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
   	<div class="dropdown d-inline">
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Pengeluaran</a>
+      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Spending</a>
       </div>
 </div>
   <div class="card-body">
@@ -20,8 +20,8 @@
             <thead>
                 <tr>
                     <th width="20">No</th>
-                    <th>Tanggal</th>
-                    <th>Jenis Pengeluaran</th>
+                    <th>Date</th>
+                    <th>Spending Type</th>
                     <th>Nominal</th>
                     <th>Manage Data</th>
                 </tr>

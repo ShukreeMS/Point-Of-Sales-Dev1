@@ -63,7 +63,7 @@
               <input type="text" class="form-control" id="total_rp" readonly>  
             </div>
 
-            <div class="section-title">Kode Member</div>
+            <div class="section-title">Member Code</div>
             <div class="form-group">
               <div class="input-group mb-3">
                 <input id="member_code" name="member_code" value="0" type="text" class="form-control" placeholder="" aria-label="" autofocus required>
@@ -73,22 +73,22 @@
               </div>
             </div>
 
-            <div class="section-title">Kode Member</div>
+            <div class="section-title">Member Code</div>
             <div class="form-group">           
               <input type="text" class="form-control" name="discount" id="discount" value="0" readonly>
             </div>
 
-            <div class="section-title">Bayar</div>
+            <div class="section-title">Payment</div>
             <div class="form-group">            
               <input type="text" class="form-control" id="pay_rp" readonly>
             </div>
 
-            <div class="section-title">Diterima</div>
+            <div class="section-title">Received</div>
             <div class="form-group">
               <input type="number" class="form-control" value="0" name="received" id="received">  
             </div>
 
-            <div class="section-title">Kembali</div>
+            <div class="section-title">Return</div>
             <div class="form-group">
               <input type="text" class="form-control" id="remaining" value="0" readonly>
             </div>

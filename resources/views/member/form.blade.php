@@ -11,25 +11,25 @@
                     <input type="hidden" id="id" name="id">
                     <div class="form-group form-float">
                         <div class="form-line">                        	
-                        	<label class="form-label">Nama Member</label>
+                        	<label class="form-label">Member Name</label>
                             <input type="text" class="form-control" id="member_name" name="member_name" autofocus required>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">                        	
-                        	<label class="form-label">Kode Member</label>
+                        	<label class="form-label">Member Code</label>
                             <input type="text" class="form-control" id="member_code" name="member_code" autofocus required>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">                         
-                            <label class="form-label">Alamat Member</label>
+                            <label class="form-label">Member Address</label>
                             <input type="text" class="form-control" id="member_address" name="member_address" autofocus required>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">                         
-                            <label class="form-label">No. Telepon</label>
+                            <label class="form-label">Telephone</label>
                             <input type="text" class="form-control" id="member_phone_number" name="member_phone_number" autofocus required>
                         </div>
                     </div>

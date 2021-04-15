@@ -13,12 +13,12 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Tanggal</th>
-                    <th>Kode Member</th>
-                    <th>Total Item</th>
-                    <th>Total Harga</th>
+                    <th>Date</th>
+                    <th>Member Code</th>
+                    <th>Total Items</th>
+                    <th>Total Price</th>
                     <th>Discount</th>
-                    <th>Total Bayar</th>
+                    <th>Total Payment</th>
                     <th>Cashier</th>
                     <th>Manage Data</th>
                 </tr>

@@ -10,10 +10,10 @@
                             <table class="table table-striped table-supplier">
                                 <thead>
                                     <tr>
-                                        <th>Nama Supplier</th>
-                                        <th>Alamat</th>
-                                        <th>Telepon</th>
-                                        <th>action</th>
+                                        <th>Supplier Name</th>
+                                        <th>Address</th>
+                                        <th>Telephone</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

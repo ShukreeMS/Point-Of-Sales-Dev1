@@ -15,11 +15,11 @@ Transaction Pembelian
             <th><b>: {{$supplier->supplier_name}}</b></th>
         </tr>
         <tr>
-            <th>Alamat</th>
+            <th>Address</th>
             <th><b>: {{$supplier->supplier_address}}</b></th>
         </tr>
         <tr>
-            <th>No. Telepon</th>
+            <th>Telephone</th>
             <th><b>: {{$supplier->supplier_phone_number}}</b></th>
         </tr>
       </table>
@@ -46,10 +46,10 @@ Transaction Pembelian
                         <th width="30">No</th>
                         <th>Product Code</th>
                         <th>Product Name</th>
-                        <th>PRice</th>
+                        <th>Price</th>
                         <th>Total</th>
                         <th>Sub Total</th>
-                        <th width="100">action</th>
+                        <th width="100">Action</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -85,7 +85,7 @@ Transaction Pembelian
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <div class="section-title">Bayar</div>
+                        <div class="section-title">Payment</div>
                         <input type="text" class="form-control" id="pay_rp" readonly>
                     </div>
                 </div>

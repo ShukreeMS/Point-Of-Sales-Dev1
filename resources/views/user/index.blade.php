@@ -10,7 +10,7 @@
   <div class="card-body">
   	<button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Pengguna</a>
+      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Users</a>
       </div>
   </div>
   <div class="card-body">
@@ -19,7 +19,7 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama User</th>
+                    <th>UserName</th>
                     <th>Email</th>
                     <th>Manage Data</th>
                 </tr>
