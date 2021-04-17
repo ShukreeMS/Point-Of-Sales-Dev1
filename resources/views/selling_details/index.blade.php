@@ -168,7 +168,7 @@
           });             
         },
         error : function(){
-          alert("Tidak dapat menyimpan data!");
+          alert("Unable to save data!");
         }   
       });
     }
@@ -199,21 +199,21 @@
               });             
             },
             error : function(){
-              alert("Tidak dapat menyimpan data!");
+              alert("Unable to Save Data!");
             }   
          });
     }
 
     function selectMember(member_code){
       $('#modal-member').modal('hide');
-      $('#discount').val('{{ $setting->member_discount }}');
+      // $('#discount').val('{{ $setting->member_discount }}');
       $('#member_code').val(member_code);
       loadForm($('#discount').val());
       $('#received').val(0).focus().select();
     }
 
     function deleteItem(id){
-       if(confirm("Apakah yakin data akan dihapus?")){
+       if(confirm("Do you want to Delete this?")){
          $.ajax({
            url : "transaction/"+id,
            type : "POST",
@@ -224,7 +224,7 @@
               }); 
            },
            error : function(){
-             alert("Tidak dapat menghapus data!");
+             alert("Cannot Delete Data!");
            }
          });
        }
@@ -242,17 +242,17 @@
              $('#total_rp').val("Rp. "+data.total_rp);
              $('#pay_rp').val("Rp. "+data.pay_rp);
              $('#pay').val(data.pay);
-             $('#show-pay').html("<small>Bayar: </small><br>Rp. "+data.pay_rp);
-             $('#show-spelling').text(data.spelling);
+             $('#show-pay').html("<small>Payment: </small><br>Rp. "+data.pay_rp);
+            //  $('#show-spelling').text(data.spelling);
             
              $('#remaining').val("Rp. "+data.remaining_rp);
              if($('#received').val() != 0){
-                $('#show-pay').html("<small>Kembali: </small><br>Rp. "+data.remaining_rp+"</small>");
-                $('#show-spelling').text(data.remaining_spelling);
+                $('#show-pay').html("<small>Return: </small><br>Rp. "+data.remaining_rp+"</small>");
+                // $('#show-spelling').text(data.remaining_spelling);
              }
            },
            error : function(){
-             alert("Tidak dapat menampilkan data!");
+             alert("Unable to Display Data!");
            }
       });
     }

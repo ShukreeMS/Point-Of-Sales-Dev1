@@ -23,7 +23,7 @@
      {{ $setting->company_address }}<br><br>
      </td>
      <td>Date</td>
-     <td>: {{ indo_date(date('Y-m-d')) }}</td>
+     <td>: {{ en_date(date('Y-m-d')) }}</td>
   </tr>     
   <tr>
      <td>Member Code</td>

@@ -23,7 +23,7 @@
 		      <th>{{ $data->product_code }}</th>
 		      <th>{{ $data->product_name }}</th>
 		      <th>Rp. {{ currency_format($data->purchase_price) }}</th>
-		      <th><a onclick="selectItem({{ $data->product_code }})" class="btn btn-primary"><i class="fa fa-check-circle"></i> Pilih</a></th>
+		      <th><a onclick="selectItem({{ $data->product_code }})" class="btn btn-primary"><i class="fa fa-check-circle"></i> Choose</a></th>
 		    </tr>
 			@endforeach
 		</tbody>

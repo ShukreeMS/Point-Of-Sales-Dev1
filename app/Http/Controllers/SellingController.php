@@ -34,7 +34,7 @@ class SellingController extends Controller
                         Action
                       </button>
                       <div class="dropdown-menu">
-                        <a onclick="showDetail('.$list->selling_id.')" class="dropdown-item has-icon"><i class="fas fa-eye"></i>Lihat Data</a>
+                        <a onclick="showDetail('.$list->selling_id.')" class="dropdown-item has-icon"><i class="fas fa-eye"></i>View Data</a>
                         <a onclick="deleteData('.$list->selling_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Delete Data</a>
                       </div></tr>';
             $data[] = $row;

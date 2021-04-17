@@ -92,7 +92,7 @@
 						}
 					},
 					error : function(){
-						alert("Tidak dapat menyimpan data");
+						alert("Unable to save data");
 					}
 				});
 				return false;
@@ -126,13 +126,13 @@
 				$('#member_phone_number').val(data.member_phone_number);
 			},
 			error		: function(){
-				alert("Tidak dapat menampilkan data!");
+				alert("Unable to display data!");
 			}
 		});
 	}
 
 	function deleteData(id){
-		if(confirm("Apakah yakin data akan dihapus?")){
+		if(confirm("Do you want to delete data?")){
 			$.ajax({
 				url		: "member/"+id,
 				type 	: "POST",
@@ -141,7 +141,7 @@
 					table.ajax.reload();
 				},
 				error	: function(){
-					alert("Tidak dapat menghapus data");
+					alert("Unable to delete data");
 				} 
 			});
 		}

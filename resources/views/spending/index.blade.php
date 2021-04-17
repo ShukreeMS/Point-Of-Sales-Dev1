@@ -22,7 +22,7 @@
                     <th width="20">No</th>
                     <th>Date</th>
                     <th>Spending Type</th>
-                    <th>Nominal</th>
+                    <th>Expense</th>
                     <th>Manage Data</th>
                 </tr>
             </thead>
@@ -64,7 +64,7 @@
 						table.ajax.reload();
 					},
 					error : function(){
-						alert("Tidak dapat menyimpan data");
+						alert("Unable to save data");
 					}
 				});
 				return false;
@@ -76,7 +76,7 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-		$('.modal-title').text('Tambah Pengeluaran');
+		$('.modal-title').text('Add Expenditure');
 	}
 	function editForm(id){
 		save_method = "edit";
@@ -88,20 +88,20 @@
 			dataType	: "JSON",
 			success		: function(data){
 				$('#modal-form').modal('show');
-				$('.modal-title').text('Edit Pengeluaran');
+				$('.modal-title').text('Edit Expenditure');
 
 				$('#id').val(data.spending_id);
 				$('#spending_type').val(data.spending_type);
 				$('#nominal').val(data.nominal);
 			},
 			error		: function(){
-				alert("Tidak dapat menampilkan data!");
+				alert("Unable to display data!");
 			}
 		});
 	}
 
 	function deleteData(id){
-		if(confirm("Apakah yakin data akan dihapus?")){
+		if(confirm("Do you want to delete data?")){
 			$.ajax({
 				url		: "spending/"+id,
 				type 	: "POST",
@@ -110,7 +110,7 @@
 					table.ajax.reload();
 				},
 				error	: function(){
-					alert("Tidak dapat menghapus data");
+					alert("Unable to delete data");
 				} 
 			});
 		}

@@ -137,9 +137,9 @@ class SellingDetailsController extends Controller
         "total_rp" => currency_format($total),
         "pay" => $pay,
         "pay_rp" => currency_format($pay),
-        "spelling" => ucwords(spelling($pay))." Rupiah",
+        "spelling" => ucwords(spelling($pay))." Rupees",
         "remaining_rp" => currency_format($remaining),
-        "remaining_spelling" => ucwords(spelling($remaining))." Rupiah"
+        "remaining_spelling" => ucwords(spelling($remaining))." Rupees"
       );
      return response()->json($data);
    }
@@ -196,7 +196,7 @@ class SellingDetailsController extends Controller
         $printer->text("---------------------------- \n", 0);
 
         $printer->setJustification($left);
-        $printer->text("Total Harga: ", 0);
+        $printer->text("Total Price: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("           ".currency_format($selling->total_price). "\n", -10));
 
@@ -206,29 +206,29 @@ class SellingDetailsController extends Controller
         $printer->text(substr("           ".$selling->total_item . "\n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Diskon Member: ", 0);
+        $printer->text("Discount: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("           ".$selling->discount."% \n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Total Bayar: ", 0);
+        $printer->text("Total Payment: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("            ".currency_format($selling->pay) . "\n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Diterima: ", 0);
+        $printer->text("Received: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("            ".currency_format($selling->received) . "\n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Kembali: ", 0);
+        $printer->text("Return: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("            ".currency_format($selling->received-$selling->pay) . "\n", -10));
         
         $printer->setJustification($center);
         $printer->text("============================ \n", 0);
         $printer->setJustification($center);
-        $printer->text("-= TERIMA KASIH =-", 250);
+        $printer->text("-= Thank You =-", 250);
         
         $printer->setJustification();
         $printer->cut();

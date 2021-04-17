@@ -62,7 +62,7 @@
 						table.ajax.reload();
 					},
 					error : function(){
-						alert("Tidak dapat menyimpan data");
+						alert("Unable to save data!");
 					}
 				});
 				return false;
@@ -95,7 +95,7 @@
 				$('#password, #loop_password').removeAttr('required');
 			},
 			error		: function(){
-				alert("Tidak dapat menampilkan data!");
+				alert("Unable to display data!");
 			}
 		});
 	}
@@ -110,7 +110,7 @@
 					table.ajax.reload();
 				},
 				error	: function(){
-					alert("Tidak dapat menghapus data");
+					alert("Unable to delete data");
 				} 
 			});
 		}

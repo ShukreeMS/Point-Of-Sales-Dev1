@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-Transaction Pembelian
+Purchase Transaction
 @endsection
 
 @section('content')
@@ -146,7 +146,7 @@ Transaction Pembelian
                 });
             },
             error : function(){
-                alert("Tidak dapat menyimpan data");
+                alert("Unable to save data");
             }
         })
     }
@@ -168,7 +168,7 @@ Transaction Pembelian
         });
     },
     error : function(){
-        alert("Tidak dapat menyimpan data");
+        alert("Unable to save data");
     }
 });
 }
@@ -178,7 +178,7 @@ function showProduct(){
 }
 
 function deleteItem(id){
-    if(confirm("Apakah yakin data akan dihapus?")){
+    if(confirm("Do you want to delete data?")){
         $.ajax({
             url     : "purchase_details/"+id,
             type    : "POST",
@@ -189,7 +189,7 @@ function deleteItem(id){
                 });
             },
             error   : function(){
-                alert("Tidak dapat menghapus data");
+                alert("unable to delete data");
             } 
         });
     }
@@ -207,10 +207,10 @@ function loadForm(discount=0){
             $('#pay_rp').val("Rp. "+data.pay_rp);
             $('#pay').val(data.pay);
             $('#show-pay').text("Rp. "+data.pay_rp);
-            $('#show-spelling').text(data.spelling)
+            // $('#show-spelling').text(data.spelling)
         },
         error       : function(){
-            alert("Tidak dapat menampilkan data!");
+            alert("cannot display data!");
         }
     });
 }

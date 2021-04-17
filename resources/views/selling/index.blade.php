@@ -68,7 +68,7 @@
 
 
     function deleteData(id){
-        if(confirm("Apakah yakin data akan dihapus?")){
+        if(confirm("Do you want to delete data?")){
             $.ajax({
                 url     : "selling/"+id,
                 type    : "POST",
@@ -77,7 +77,7 @@
                     table.ajax.reload();
                 },
                 error   : function(){
-                    alert("Tidak dapat menghapus data");
+                    alert("Unable to delete data");
                 } 
             });
         }

@@ -104,12 +104,12 @@
                     <span>Customers</span>
                 </a>
             </li>
-            {{-- <li>
+            <li>
                 <a class="nav-link" href="{{route('spending.index')}}">
                     <i class="fas fa-hand-holding-usd"></i>
-                    <span>Pengeluaran</span>
+                    <span>Expense</span>
                 </a>
-            </li> --}}
+            </li>
             <li>
                 <a class="nav-link" href="{{route('user.index')}}">
                     <i class="fas fa-users"></i>
@@ -123,28 +123,28 @@
                 </a>
             </li>
 
+            {{-- <li>
+
+                <a class="nav-link" href="{{route('member.index')}}">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Invoice</span>
+                </a>
+            </li>
             <li>
-
               <a class="nav-link" href="{{route('member.index')}}">
-                  <i class="fas fa-file-invoice"></i>
-                  <span>Invoice</span>
+                  <i class="fas fa-file-invoice-dollar"></i>
+                  <span>Invoice Product</span>
               </a>
-          </li>
-          <li>
-            <a class="nav-link" href="{{route('member.index')}}">
-                <i class="fas fa-file-invoice-dollar"></i>
-                <span>Invoice Product</span>
-            </a>
-        </li>
-            {{-- <li>
+            </li> --}}
+           
 
-            {{-- <li>
+            <li>
 
                 <a class="nav-link" href="{{route('purchase.index')}}">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Purchase</span>
                 </a>
-            </li> --}}
+            </li>
             <li>
                 <a class="nav-link" href="{{route('report.index')}}">
                     <i class="fas fa-file-alt"></i>

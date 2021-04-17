@@ -25,7 +25,7 @@
             <th>{{ $data->member_name }}</th>
             <th>{{ $data->member_address }}</th>
             <th>{{ $data->member_phone_number }}</th>
-            <th><a onclick="selectMember({{ $data->member_code }})" class="btn btn-primary"><i class="fa fa-check-circle"></i> Pilih</a></th>
+            <th><a onclick="selectMember({{ $data->member_code }})" class="btn btn-primary"><i class="fa fa-check-circle"></i> Choose</a></th>
           </tr>
          @endforeach
       </tbody>

@@ -22,7 +22,7 @@
                                         <td>{{$data->supplier_name}}</td>
                                         <td>{{$data->supplier_address}}</td>
                                         <td>{{$data->supplier_phone_number}}</td>
-                                        <td><a href="purchase/{{$data->supplier_id}}/add">Pilih</a></td>
+                                        <td><a href="purchase/{{$data->supplier_id}}/add">Choose</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

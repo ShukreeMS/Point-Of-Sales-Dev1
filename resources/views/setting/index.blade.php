@@ -104,7 +104,7 @@ $(function(){
              $('.alert').css('display', 'block').delay(2000).fadeOut();
            },
            error : function(){
-             alert("Tidak dapat menyimpan data!");
+             alert("Unable to save data!");
            }   
          });
          return false;
@@ -130,7 +130,7 @@ function showData(){
       $('.show-card').html('<img src="/images/'+data.member_card+'?'+d.getTime()+'" width="300">');
     },
     error : function(){
-      alert("Tidak dapat menyimpan data!");
+      alert("Unable to save data!");
     }   
   });
 }

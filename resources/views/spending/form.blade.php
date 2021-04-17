@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Nominal</label>
+                            <label class="form-label">Expense</label>
                             <input type="text" class="form-control" id="nominal" name="nominal" autofocus required>
                         </div>
                     </div>

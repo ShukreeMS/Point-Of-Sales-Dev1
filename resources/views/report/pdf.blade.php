@@ -7,7 +7,7 @@
 <body>
  
 <h3 class="text-center">Income Report</h3>
-<h4 class="text-center">Date  {{ indo_date($date_begin) }} s/d {{ indo_date($date_end) }} </h4>
+<h4 class="text-center">Date  {{ en_date($date_begin) }} s/d {{ en_date($date_end) }} </h4>
 
          
 <table class="table table-striped">

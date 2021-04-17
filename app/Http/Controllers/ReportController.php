@@ -43,7 +43,7 @@ class ReportController extends Controller
        $row[] = currency_format($income);
        $data[] = $row;
      }
-     $data[] = array("", "", "", "", "Total Pendapatan", currency_format($total_income));
+     $data[] = array("", "", "", "", "Total Income", currency_format($total_income));
 
      return $data;
    }

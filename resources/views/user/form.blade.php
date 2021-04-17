@@ -32,7 +32,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">                            
                             <label class="form-label">Repeat Password</label>
-                            <input type="password" class="form-control" id="loop_password" data-match="#password" data-match-error="Maaf password tidak sama" name="loop_password" required>
+                            <input type="password" class="form-control" id="loop_password" data-match="#password" data-match-error="Sorry password does not match" name="loop_password" required>
                         </div>
                         <span class="help-block with-errors"></span>
                     </div>

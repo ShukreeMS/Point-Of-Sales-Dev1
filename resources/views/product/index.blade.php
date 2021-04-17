@@ -99,7 +99,7 @@
 						}
 					},
 					error : function(){
-						alert("Tidak dapat menyimpan data");
+						alert("Unable to save data");
 					}
 				});
 				return false;
