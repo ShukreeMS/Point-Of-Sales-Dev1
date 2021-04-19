@@ -148,9 +148,16 @@
             <li>
                 <a class="nav-link" href="{{route('report.index')}}">
                     <i class="fas fa-file-alt"></i>
-                    <span>Report</span>
+                    <span>Income Report</span>
                 </a>
             </li>
+            <li>
+              <a class="nav-link" href="{{route('productreport.index')}}">
+                  <i class="fas fa-file-alt"></i>
+                  <span>Product Report</span>
+              </a>
+          </li>
+
             @else
             <li>
                 <a class="nav-link" href="{{route('transaction.index')}}">

@@ -17,9 +17,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 
 use App\Category;
+use App\Mail\StockLowMail;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,6 +107,12 @@ Route::group(['middleware' => ['web', 'usercheck:1']], function(){
 	Route::get('purchase_details/loadform/{discount}/{total}', 'PurchaseDetailsController@loadForm');
 	Route::resource('purchase_details', 'PurchaseDetailsController');
 
+	Route::get('/email', function () {
+		Mail::to('email@email.com')->send(new StockLowMail());
+
+		return new StockLowMail();
+	});
+
 	Route::get('selling/data', 'SellingController@listData')->name('selling.data');
 	Route::get('selling/{id}/show', 'SellingController@show');
 	Route::resource('selling', 'SellingController');
@@ -115,6 +122,8 @@ Route::group(['middleware' => ['web', 'usercheck:1']], function(){
    Route::get('report/data/{begin}/{end}', 'ReportController@listData')->name('report.data'); 
    Route::get('report/pdf/{begin}/{end}', 'ReportController@exportPDF');
    Route::resource('setting', 'SettingController');
+
+   Route::get('product-report', 'ProductReportController@index')->name('productreport.index');
 
 });
 

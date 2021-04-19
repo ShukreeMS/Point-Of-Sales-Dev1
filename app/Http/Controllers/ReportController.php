@@ -43,7 +43,7 @@ class ReportController extends Controller
        $row[] = currency_format($income);
        $data[] = $row;
      }
-     $data[] = array("", "", "", "", "Total Income", currency_format($total_income));
+     $data[] = array("", "", "", "", "Total Profit", currency_format($total_income));
 
      return $data;
    }
@@ -66,7 +66,8 @@ class ReportController extends Controller
      $date_begin = $begin;
      $date_end = $end;
      $data = $this->getData($begin, $end);
-     $pdf = PDF::loadView('report.pdf', compact('date_begin', 'date_end', 'data'));
+     set_time_limit(300);
+     $pdf = PDF::loadView('report.pdf', compact('date_begin', 'date_end', 'data', ));
      $pdf->setPaper('a4', 'potrait');
      
      return $pdf->stream();

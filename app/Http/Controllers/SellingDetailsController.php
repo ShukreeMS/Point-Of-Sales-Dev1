@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\StockLowMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
@@ -9,8 +10,10 @@ use Barryvdh\DomPDF\Facade as PDF;
 use App\Selling;
 use App\Product;
 use App\Member;
+use App\User;
 use App\Setting;
 use App\SellingDetails;
+use Illuminate\Support\Facades\Mail;
 use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\Printer;
 
@@ -126,6 +129,11 @@ class SellingDetailsController extends Controller
         $product->product_stock -= $data->total;
         $product->update();
       }
+
+      if(Product::where('product_stock', '<', '10')){
+        Mail::to('shukree@gmail.com')->send(new StockLowMail());
+      }
+
       return Redirect::route('transaction.print');
    }
    
