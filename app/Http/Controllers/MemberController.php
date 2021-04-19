@@ -46,6 +46,7 @@ class MemberController extends Controller
 			$member->member_address = $request['member_address'];
 			$member->member_phone_number = $request['member_phone_number'];        
 	        $member->save();
+           
 	        echo json_encode(array('msg'=>'success'));
         }else{
         	echo json_encode(array('msg'=>'error'));

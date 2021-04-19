@@ -95,12 +95,12 @@ class PurchaseController extends Controller
         $purchase = Purchase::find($id);
         $purchase->delete();
 
-        $detail = PurchaseDetails::where('purchase_id', '=', $id)->get();
-        foreach ($detail as $data) {
-        	$product = Product::where('product_code', '=', $data->product_code)->first();
-        	$product->stock -= $data->total;
-        	$product->update();
-        	$data->delete();
-        }
+        // $detail = PurchaseDetails::where('purchase_id', '=', $id)->get();
+        // foreach ($detail as $data) {
+        // 	$product = Product::where('product_code', '=', $data->product_code)->first();
+        // 	$product->stock -= $data->total;
+        // 	$product->update();
+        // 	$data->delete();
+        // }
     }    
 }

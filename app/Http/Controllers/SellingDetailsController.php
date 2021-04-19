@@ -246,7 +246,7 @@ class SellingDetailsController extends Controller
       $no = 0;
      
      $pdf = PDF::loadView('selling_details.notepdf', compact('detail', 'selling', 'setting', 'no'));
-     $pdf->setPaper(array(0,0,550,440), 'potrait');      
+     $pdf->setPaper(array(0,0,550,440), 'landscape');      
       return $pdf->stream();
    }
 }

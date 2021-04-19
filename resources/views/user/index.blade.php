@@ -101,7 +101,7 @@
 	}
 
 	function deleteData(id){
-		if(confirm("Apakah yakin data akan dihapus?")){
+		if(confirm("Do you want to delete data?")){
 			$.ajax({
 				url		: "user/"+id,
 				type 	: "POST",

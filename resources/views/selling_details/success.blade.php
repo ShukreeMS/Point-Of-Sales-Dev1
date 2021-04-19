@@ -19,14 +19,14 @@
           </div>
 
           <br><br>
-          @if($setting->note_type==0)
+          @if($setting->note_type==1)
             <a class="btn btn-warning btn-lg" href="{{ route('transaction.print') }}">Reprint Note</a>
           @else
-            <a class="btn btn-warning btn-lg" onclick="showNote()">Reprint Note</a>
+            <a class="btn btn-warning btn-lg" onclick="showNote()">Print Note</a>
             <script type="text/javascript">
               showNote();
               function showNote(){
-                window.open("{{ route('transaction.pdf') }}", "Nota PDF", "height=650,width=1024,left=150,scrollbars=yes");
+                window.open("{{ route('transaction.pdf') }}", "PDF", "height=650,width=1024,left=150,scrollbars=yes");
               }              
             </script>
           @endif

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>PDF</title>
+   <title>Invoice</title>
    <style type="text/css">
       table td{font: arial 12px;}
       table.data td,
@@ -19,9 +19,9 @@
 
 <table width="100%">
   <tr>
-     <td rowspan="3" width="60%"><img src="../public/images/{{$setting->company_logo}}" width="150"><br>
+     {{-- <td rowspan="3" width="60%"><img src="../public/images/{{$setting->company_logo}}" width="150"><br>
      {{ $setting->company_address }}<br><br>
-     </td>
+     </td> --}}
      <td>Date</td>
      <td>: {{ en_date(date('Y-m-d')) }}</td>
   </tr>     

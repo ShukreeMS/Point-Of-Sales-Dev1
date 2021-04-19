@@ -13,8 +13,7 @@
       </button>
       <div class="dropdown-menu">
       	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Member</a>
-	  	<a class="dropdown-item has-icon" onclick="printCard()"><i class="fas fa-print"></i>Print Member Card</a>
-      </div>
+	  </div>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -84,7 +83,7 @@
 					dataType : "JSON",
 					success : function(data){
 						if(data.msg=="error"){
-							alert('Kode member sudah terpakai');
+							alert('Member Code Already Used');
 							$('#member_code').focus().select();
 						}else{
 							$('#modal-form').modal('hide');
