@@ -1,7 +1,7 @@
 <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form id="form_validation" method="POST" data-toggle="validator" role="form">
+            <form id="form_validation" method="POST" data-toggle="validator" role="form" class="needs-validation" novalidate>
 					{{csrf_field()}} {{method_field('POST')}}
             <div class="modal-header">
                 <h4 class="modal-title" id="defaultModalLabel"></h4>
@@ -13,6 +13,9 @@
                         	
                         	<label class="form-label">Username</label>
                             <input type="text" class="form-control" id="name" name="name" autofocus required>
+                            <div class="invalid-feedback">
+                                Please provide a valid username.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
@@ -20,6 +23,9 @@
                             
                             <label class="form-label">email</label>
                             <input type="email" class="form-control" id="email" name="email" autofocus required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
@@ -27,6 +33,9 @@
                             
                             <label class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid password.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">

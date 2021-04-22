@@ -21,6 +21,7 @@ class SellingController extends Controller
             $no ++;
             $row = array();
             $row[] = $no;
+            $row[] = $list->selling_id;
             $row[] = en_date(substr($list->date, 0, 10), false);
             $row[] = $list->member_code;
             $row[] = $list->total_item;

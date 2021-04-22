@@ -17,14 +17,16 @@ class PurchaseController extends Controller
         return view('purchase.index', compact('supplier'));
     }
     public function listData(){
-        $purchase = Purchase::leftJoin('supplier', 'supplier.supplier_id', '=', 'purchase.supplier_id')->orderBy('purchase.purchase_id', 'desc')->get();
+        $purchase = Purchase::Join('supplier', 'supplier.supplier_id', '=', 'purchase.supplier_id')->orderBy('purchase.purchase_id', 'desc')
+                        ->select('purchase.purchase_id','purchase.created_at', 'supplier.supplier_name', 'purchase.total_item', 'purchase.total_price', 'purchase.discount','purchase.pay', )->get();
         $no = 0;
         $data = array();
         foreach ($purchase as $list) {
             $no ++;
             $row = array();
             $row[] = $no;
-            $row[] = en_date(substr($list->created_at, 0, 10), false);
+            $row[] = $list->purchase_id;
+            $row[] = en_date($list->created_at);
             $row[] = $list->supplier_name;
             $row[] = $list->total_item;
             $row[] = "Rp. ".currency_format($list->total_price);

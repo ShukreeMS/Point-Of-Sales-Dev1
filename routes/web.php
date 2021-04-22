@@ -107,11 +107,6 @@ Route::group(['middleware' => ['web', 'usercheck:1']], function(){
 	Route::get('purchase_details/loadform/{discount}/{total}', 'PurchaseDetailsController@loadForm');
 	Route::resource('purchase_details', 'PurchaseDetailsController');
 
-	Route::get('/email', function () {
-		Mail::to('email@email.com')->send(new StockLowMail());
-
-		return new StockLowMail();
-	});
 
 	Route::get('selling/data', 'SellingController@listData')->name('selling.data');
 	Route::get('selling/{id}/show', 'SellingController@show');
@@ -122,6 +117,8 @@ Route::group(['middleware' => ['web', 'usercheck:1']], function(){
    Route::get('report/data/{begin}/{end}', 'ReportController@listData')->name('report.data'); 
    Route::get('report/pdf/{begin}/{end}', 'ReportController@exportPDF');
    Route::resource('setting', 'SettingController');
+
+	Route::view('/email', 'emails.lowstock');
 
    Route::get('product-report', 'ProductReportController@index')->name('productreport.index');
 

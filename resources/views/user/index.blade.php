@@ -74,7 +74,7 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-		$('.modal-title').text('Tambah User');
+		$('.modal-title').text('Add User');
 		$('#password, #loop_password').attr('required', true);
 	}
 	function editForm(id){

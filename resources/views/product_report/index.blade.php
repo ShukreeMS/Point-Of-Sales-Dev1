@@ -50,30 +50,6 @@
 @endsection
 
 @section('script')
-{{-- @include('report.form')
-<script type="text/javascript">
-var table, begin, end;
-$(function(){
-   table = $('.table-report').DataTable({
-     /* "language": {
-        "url" : "{{asset('tables_indo.json')}}",
-     }, */
-     "dom" : 'Brt',
-     "bSort" : false,
-     "bPaginate" : false,
-     "processing" : true,
-     "serverside" : true,
-     "ajax" : {
-       "url" : "report/data/{{ $begin }}/{{ $end }}",
-       "type" : "GET"
-     }
-   }); 
-
-});
-
-function periodForm(){
-   $('#modal-form').modal('show');        
-} --}}
 
 </script>
 @endsection

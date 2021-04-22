@@ -65,7 +65,7 @@ Purchase Transaction
             <div id="show-spelling" style="background: #ffffff; color: #d71149; font-weight:bold; border:5px solid #d71149; padding: 10px"></div>
         </div>
         <div class="col-md-4">
-            <form class="form form-horizontal form-purchase" method="POST" action="{{route('purchase.store')}}">
+            <form class="form form-horizontal form-purchase needs-validation" method="POST" action="{{route('purchase.store')}}" novalidate>
                 {{csrf_field()}}
                 <input type="hidden" name="purchase_id" value="{{$purchase_id}}">
                 <input type="hidden" name="total" id="total">
@@ -74,7 +74,10 @@ Purchase Transaction
                 <div class="form-group form-float">
                     <div class="form-line">
                         <div class="section-title">Total</div>
-                        <input type="text" class="form-control" id="total_rp" readonly>
+                        <input type="text" class="form-control" id="total_rp" readonly autofocus required>
+                        <div class="invalid-feedback">
+                            Please Enter proper value.
+                        </div>
                     </div>
                 </div>
                 <div class="form-group form-float">

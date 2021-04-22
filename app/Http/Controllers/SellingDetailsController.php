@@ -130,8 +130,12 @@ class SellingDetailsController extends Controller
         $product->update();
       }
 
-      if(Product::where('product_stock', '<', '10')){
-        Mail::to('shukree@gmail.com')->send(new StockLowMail());
+      $products = Product::where('product_stock', '<', 10)->get();
+
+      // return view('emails.lowstock', compact('lowstocks'));
+
+      if(count($products) > 0){
+        Mail::to('shukree@gmail.com')->send(new StockLowMail($products));
       }
 
       return Redirect::route('transaction.print');

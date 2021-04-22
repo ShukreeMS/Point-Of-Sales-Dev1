@@ -13,6 +13,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>ID</th>
                     <th>Date</th>
                     <th>Member Code</th>
                     <th>Total Items</th>

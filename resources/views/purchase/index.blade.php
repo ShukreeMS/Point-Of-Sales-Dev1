@@ -24,6 +24,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+					<th>ID</th>
                     <th>Date</th>
                     <th>Supplier</th>
                     <th>Total Items</th>

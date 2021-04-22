@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,14 +12,16 @@ class StockLowMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $products;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($products)
     {
-        //
+        $this->products = $products;
     }
 
     /**
@@ -28,6 +31,6 @@ class StockLowMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.lowstock');
+        return $this->view('emails.lowstock');
     }
 }
