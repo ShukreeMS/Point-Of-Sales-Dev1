@@ -22,6 +22,7 @@ class ProductReportController extends Controller
             ->leftJoin('product', 'selling_details.product_code', '=', 'product.product_code')
             ->select('selling_details.selling_details_id as id', 'selling_details.product_code as product_code', 
                     'selling_details.total as quantity', 'selling_details.created_at as created_at', 'product.product_name as name')
+            ->orderBy('created_at', 'DESC')        
             ->get();
         return view("product_report.index", ["products" => $products, $begin, $end]);
     }
@@ -31,7 +32,7 @@ class ProductReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function filter()
     {
         //
     }
