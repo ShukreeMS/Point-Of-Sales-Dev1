@@ -120,7 +120,11 @@ Route::group(['middleware' => ['web', 'usercheck:1']], function(){
 
 	Route::view('/email', 'emails.lowstock');
 
-   Route::get('product-report', 'ProductReportController@index')->name('productreport.index');
+	Route::get('product-report', 'ProductReportController@index')->name('productreport.index');
+	Route::post('product-report', 'ProductReportController@filterdate')->name('productreport.data');
+	Route::get('product-report/pdf/{begin}/{end}', 'ProductReportController@exportpdf');
+	// Route::post('product-report/pdf/{search}', 'ProductReportController@exportpdf');
+
 
 });
 

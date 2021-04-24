@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\SellingDetails;
+// use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ProductReportController extends Controller
 {
@@ -19,12 +21,12 @@ class ProductReportController extends Controller
         $end = date('Y-m-d');
         // $products = SellingDetails::all('selling_details_id','product_code','total', 'created_at');
         $products = DB::table('selling_details')
-            ->leftJoin('product', 'selling_details.product_code', '=', 'product.product_code')
+            ->rightJoin('product', 'selling_details.product_code', '=', 'product.product_code')
             ->select('selling_details.selling_details_id as id', 'selling_details.product_code as product_code', 
                     'selling_details.total as quantity', 'selling_details.created_at as created_at', 'product.product_name as name')
             ->orderBy('created_at', 'DESC')        
             ->get();
-        return view("product_report.index", ["products" => $products, $begin, $end]);
+        return view("product_report.index", ["products" => $products, "begin" => $begin, "end"=> $end]);
     }
 
     /**
@@ -32,64 +34,61 @@ class ProductReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function filter()
+    public function filterdate(Request $request)
     {
-        //
+        $begin = $request->input('begin');
+        $end = $request->input('end');
+        // $search = $request->input('searchid');
+
+        if ($request->isMethod('post')) {
+            # code...
+            if ($request->has('searchdate')) {
+                $query = DB::table('selling_details')
+                ->rightJoin('product', 'selling_details.product_code', '=', 'product.product_code')
+                ->select('selling_details.selling_details_id as id', 'selling_details.product_code as product_code', 
+                        'selling_details.total as quantity', 'selling_details.created_at as created_at', 'product.product_name as name')
+                ->whereBetween('selling_details.created_at', [$begin, $end])
+                ->orderBy('created_at', 'DESC')         
+                ->get();
+
+                return view("product_report.index", ["products" => $query, "begin" => $begin, "end"=> $end]);
+            }
+
+            /* elseif ($request->has('search')) {
+                $query = DB::table('selling_details')
+                ->Join('product', 'selling_details.product_code', '=', 'product.product_code')
+                ->select('selling_details.selling_details_id as id', 'selling_details.product_code as product_code', 
+                        'selling_details.total as quantity', 'selling_details.created_at as created_at', 'product.product_name as name')
+                ->where('selling_details.product_code', 'like', "%$search%")
+                ->orWhere('product.product_name', 'like', "%$search%")
+                ->orderBy('product.product_name', 'asc')
+
+                ->get();
+
+                return view("product_report.index", ["products" => $query, "begin" => $begin, "end"=> $end]);
+            } */
+        }
+
+        
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function exportpdf($begin, $end)
     {
-        //
+        
+        $data = DB::table('selling_details')
+        ->rightJoin('product', 'selling_details.product_code', '=', 'product.product_code')
+        ->select('selling_details.selling_details_id as id', 'selling_details.product_code as product_code', 
+                'selling_details.total as quantity', 'selling_details.created_at as created_at', 'product.product_name as name')
+        ->whereBetween('selling_details.created_at', [$begin, $end])
+        ->orderBy('created_at', 'DESC')         
+        ->get();
+        set_time_limit(300);
+        $pdf = PDF::loadView('product_report.pdf', compact('begin', 'end', 'data', ));
+        $pdf->setPaper('a4', 'potrait');
+        
+        return $pdf->stream();
+            
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
