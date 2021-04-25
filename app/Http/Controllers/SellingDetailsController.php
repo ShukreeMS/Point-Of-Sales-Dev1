@@ -149,9 +149,7 @@ class SellingDetailsController extends Controller
         "total_rp" => currency_format($total),
         "pay" => $pay,
         "pay_rp" => currency_format($pay),
-        "spelling" => ucwords(spelling($pay))." Rupees",
         "remaining_rp" => currency_format($remaining),
-        "remaining_spelling" => ucwords(spelling($remaining))." Rupees"
       );
      return response()->json($data);
    }

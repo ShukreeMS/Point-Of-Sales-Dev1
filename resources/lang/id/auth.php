@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'The provided credential is not registered',
+    'failed' => 'The provided credentials is not registered',
     'throttle' => 'Too many login attempts please try again after awhile',
 
 

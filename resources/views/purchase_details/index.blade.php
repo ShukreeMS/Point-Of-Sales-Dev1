@@ -210,7 +210,6 @@ function loadForm(discount=0){
             $('#pay_rp').val("Rp. "+data.pay_rp);
             $('#pay').val(data.pay);
             $('#show-pay').text("Rp. "+data.pay_rp);
-            // $('#show-spelling').text(data.spelling)
         },
         error       : function(){
             alert("cannot display data!");

@@ -243,12 +243,10 @@
              $('#pay_rp').val("Rp. "+data.pay_rp);
              $('#pay').val(data.pay);
              $('#show-pay').html("<small>Payment: </small><br>Rp. "+data.pay_rp);
-            //  $('#show-spelling').text(data.spelling);
             
              $('#remaining').val("Rp. "+data.remaining_rp);
              if($('#received').val() != 0){
                 $('#show-pay').html("<small>Return: </small><br>Rp. "+data.remaining_rp+"</small>");
-                // $('#show-spelling').text(data.remaining_spelling);
              }
            },
            error : function(){
