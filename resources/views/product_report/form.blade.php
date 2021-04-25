@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
        <div class="modal-content">
       
-    <form class="form-horizontal" data-toggle="validator" method="POST" action="{{route('productreport.data')}}">
+    <form class="form-horizontal needs-validation" data-toggle="validator" method="POST" action="{{route('productreport.data')}}" novalidate>
     {{ csrf_field() }}
     
     <div class="modal-header">
@@ -16,7 +16,9 @@
        <label for="begin">Start Date</label>
        <div class="col-md-6">
           <input id="begin" type="date" class="form-control" name="begin" autofocus required>
-          <span class="help-block with-errors"></span>
+          <div class="invalid-feedback">
+            Please Select Valid Start Date
+        </div>
        </div>
     </div>
  
@@ -24,7 +26,9 @@
        <label for="end">End Date</label>
        <div class="col-md-6">
           <input id="end" type="date" class="form-control" name="end" autofocus required>
-          <span class="help-block with-errors"></span>
+          <div class="invalid-feedback">
+            Please Select Valid End Date
+        </div>
        </div>
     </div>
     

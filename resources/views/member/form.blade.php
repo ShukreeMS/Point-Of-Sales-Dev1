@@ -12,10 +12,11 @@
                     <div class="form-group form-float">
                         <div class="form-line">                        	
                         	<label class="form-label">Member Name</label>
-                            <input type="text" class="form-control" id="member_name" name="member_name" autofocus required >
-                        </div>
-                        <div class="invalid-feedback">
-                                Please provide a valid Name.
+                            <input type="text" class="form-control" id="member_name" name="member_name" value="{{old("member_name")}}" autofocus required >
+                        
+                            <div class="invalid-feedback">
+                                    Please provide a valid Name.
+                            </div>  
                         </div>
                     </div>
                     <div class="form-group form-float">

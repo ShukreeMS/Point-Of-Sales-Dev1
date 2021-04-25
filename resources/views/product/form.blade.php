@@ -14,7 +14,7 @@
                         <div class="form-line">
                             <input type="number" class="form-control" id="product_code" id="validationCustom01" name="product_code" autofocus required>
                             <div class="invalid-feedback">
-                                Please Select valid code.
+                                Please enter valid code.
                             </div>
                         </div>
                     </div>
@@ -35,24 +35,36 @@
                                 <option value="{{$list->category_id}}">{{$list->category_name}}</option>
                                 @endforeach
                             </select>
+                            <div class="invalid-feedback">
+                                Please select category.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label class="form-label">Product Brand</label>
                             <input type="text" class="form-control" id="product_brand" name="product_brand" autofocus required>
+                            <div class="invalid-feedback">
+                                Please enter valid brand name.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label class="form-label">Purchase Price</label>
                             <input type="text" class="form-control" id="purchase_price" name="purchase_price" autofocus required>
+                            <div class="invalid-feedback">
+                                Please enter valid price.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label class="form-label">Discount</label>
-                            <input type="text" class="form-control" id="discount" name="discount" autofocus required>
+                            <input type="text" class="form-control" id="discount" name="discount" placeholder="if no discount enter 0" autofocus required>
+                            <div class="invalid-feedback">
+                                Please enter value.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
@@ -68,6 +80,9 @@
                         <div class="form-line">
                             <label class="form-label">Product Stock</label>
                             <input type="text" class="form-control" id="product_stock" name="product_stock" autofocus required>
+                            <div class="invalid-feedback">
+                                Please Enter valid stock quantity.
+                            </div>
                         </div>
                     </div>
 	            </div>

@@ -14,7 +14,7 @@
                         	<label class="form-label" for="validationCustom01">Supplier Name</label>
                             <input type="text" class="form-control" id="supplier_name" id="validationCustom01" name="supplier_name" autofocus required>
                             <div class="invalid-feedback">
-                                Please Insert Valid Input
+                                Please Insert Valid Name
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                             <label class="form-label" for="validationCustom02">Supplier Address</label>
                             <input type="text" class="form-control" id="supplier_address" id="validationCustom02" name="supplier_address" autofocus required>
                             <div class="invalid-feedback">
-                                Please Insert Valid Input
+                                Please Insert Valid Address
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                             <label class="form-label" for="validationCustom03">Telephone Number</label>
                             <input type="text" class="form-control" id="supplier_phone_number" id="validationCustom03" name="supplier_phone_number" autofocus required>
                             <div class="invalid-feedback">
-                                Please Insert Valid Input
+                                Please Insert Valid Number
                             </div>
                         </div>
                     </div>

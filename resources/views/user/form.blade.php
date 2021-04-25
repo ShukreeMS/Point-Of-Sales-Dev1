@@ -12,7 +12,7 @@
                         <div class="form-line">
                         	
                         	<label class="form-label">Username</label>
-                            <input type="text" class="form-control" id="name" name="name" autofocus required>
+                            <input type="text" class="form-control" id="name" name="name" required>
                             <div class="invalid-feedback">
                                 Please provide a valid username.
                             </div>
@@ -21,8 +21,8 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             
-                            <label class="form-label">email</label>
-                            <input type="email" class="form-control" id="email" name="email" autofocus required>
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email"  required>
                             <div class="invalid-feedback">
                                 Please provide a valid email.
                             </div>
@@ -42,8 +42,11 @@
                         <div class="form-line">                            
                             <label class="form-label">Repeat Password</label>
                             <input type="password" class="form-control" id="loop_password" data-match="#password" data-match-error="Sorry password does not match" name="loop_password" required>
+                            <div class="invalid-feedback">
+                                Please provide reenter password.
+                            </div>
                         </div>
-                        <span class="help-block with-errors"></span>
+                        
                     </div>
 	            </div>
 	            <div class="modal-footer">
