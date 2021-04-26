@@ -6,7 +6,16 @@
 
 @section('content')
   <div class="card">
-    <div class="card-body">     
+    <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-warning">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif     
       <form class="form form-horizontal form-product" method="post">
         {{ csrf_field() }}  
         <input type="hidden" name="selling_id" value="{{ $selling_id }}">
@@ -199,7 +208,7 @@
               });             
             },
             error : function(){
-              alert("Unable to Save Data!");
+              alert("Unable to Edit Data!");
             }   
          });
     }

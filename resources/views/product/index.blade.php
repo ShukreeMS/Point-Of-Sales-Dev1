@@ -12,7 +12,7 @@
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
       	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Product</a>
-	  	<a class="dropdown-item has-icon" onclick="printBarcode()"><i class="fas fa-print"></i>Print Barcode Product</a>
+	  	{{-- <a class="dropdown-item has-icon" onclick="printBarcode()"><i class="fas fa-print"></i>Print Barcode Product</a> --}}
 	  	<a class="dropdown-item has-icon" onclick="deleteAll()"><i class="fas fa-trash"></i>Delete all data</a>
       </div>
   </div>

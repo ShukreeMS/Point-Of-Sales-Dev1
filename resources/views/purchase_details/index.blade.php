@@ -24,6 +24,15 @@ Purchase Transaction
         </tr>
       </table>
   </div>
+            @if ($errors->any())
+                <div class="alert alert-warning">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         <form class="form form-horizontal form-product" method="POST">
             {{csrf_field()}}
             <input type="hidden" name="purchase_id" value="{{$purchase_id}}">
@@ -93,7 +102,7 @@ Purchase Transaction
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-outline-primary save">Save Transaction</button>
+                    <button type="submit" class="btn btn-outline-primary " onclick="return confirm('Are you sure you want to add purchase?')">Save Transaction</button>
                 </div>
             </form>
         </div>
@@ -149,7 +158,7 @@ Purchase Transaction
                 });
             },
             error : function(){
-                alert("Unable to save data");
+                alert("Unable to add item");
             }
         })
     }
@@ -171,7 +180,7 @@ Purchase Transaction
         });
     },
     error : function(){
-        alert("Unable to save data");
+        alert("Unable to edit data");
     }
 });
 }

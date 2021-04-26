@@ -115,13 +115,30 @@ class SellingDetailsController extends Controller
    public function saveData(Request $request)
    {
       $selling = Selling::find($request['selling_id']);
-      $selling->member_code = $request['member_code'];
+      /* $selling->member_code = $request['member_code'];
       $selling->total_item = $request['total_item'];
       $selling->total_price = $request['total'];
       $selling->discount = $request['discount'];
       $selling->pay = $request['pay'];
-      $selling->received = $request['received'];
-      $selling->update();
+      $selling->received = $request['received']; */
+      
+      $data = $request->validate([
+        "member_code" => "",
+        "total_item" => "required|numeric|gt:0",
+        "total" => "required|numeric|gt:0",
+        "discount"=>"required",
+        "pay"=>"required|numeric|gt:0",
+        "received"=>"required|numeric|gt:0",
+    ]);
+      
+      $selling->update([
+        "member_code" => $data["member_code"],
+        "total_item" => $data["total_item"],
+        "total_price" => $data["total"],
+        "discount" => $data["discount"],
+        "pay" => $data["pay"],
+        "received" => $data["received"],
+      ]);
 
       $detail = SellingDetails::where('selling_id', '=', $request['selling_id'])->get();
       foreach($detail as $data){
@@ -131,8 +148,6 @@ class SellingDetailsController extends Controller
       }
 
       $products = Product::where('product_stock', '<', 10)->get();
-
-      // return view('emails.lowstock', compact('lowstocks'));
 
       if(count($products) > 0){
         Mail::to('shukree@gmail.com')->send(new StockLowMail($products));
@@ -156,7 +171,7 @@ class SellingDetailsController extends Controller
 
    public function printNote()
    {
-      $detail = SellingDetails::leftJoin('product', 'product.product_code', '=', 'selling_details.product_code')
+      /* $detail = SellingDetails::leftJoin('product', 'product.product_code', '=', 'selling_details.product_code')
         ->where('selling_id', '=', session('selling_id'))
         ->get();
 
@@ -243,9 +258,9 @@ class SellingDetailsController extends Controller
         $printer->setJustification();
         $printer->cut();
         $printer->close();
-      }
+      } */
        
-      return view('selling_details.success', compact('setting'));
+      return view('selling_details.success');
    }
 
    public function notePDF(){

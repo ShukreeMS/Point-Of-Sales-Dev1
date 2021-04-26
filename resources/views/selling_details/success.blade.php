@@ -19,7 +19,7 @@
           </div>
 
           <br><br>
-          @if($setting->note_type==1)
+          {{-- @if($setting ?? ''->note_type==1)
             <a class="btn btn-warning btn-lg" href="{{ route('transaction.print') }}">Reprint Note</a>
           @else
             <a class="btn btn-warning btn-lg" onclick="showNote()">Print Note</a>
@@ -29,7 +29,8 @@
                 window.open("{{ route('transaction.pdf') }}", "PDF", "height=650,width=1024,left=150,scrollbars=yes");
               }              
             </script>
-          @endif
+          @endif --}}
+          <a class="btn btn-warning btn-lg" href="{{ route('transaction.pdf') }}">Print Note</a>
           <a class="btn btn-primary btn-lg" href="{{ route('transaction.new') }}">New Transaction</a>
           <br><br><br><br>
   </div>

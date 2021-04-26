@@ -79,11 +79,25 @@ class PurchaseController extends Controller
     }
     public function store(Request $request){
         $purchase = Purchase::find($request['purchase_id']);
-        $purchase->total_item = $request['total_item'];
+        /* $purchase->total_item = $request['total_item'];
         $purchase->total_price = $request['total'];
         $purchase->discount = $request['discount'];
         $purchase->pay = $request['pay'];
-        $purchase->update();
+        $purchase->update(); */
+
+        $data = $request->validate([
+            "total_item" => "required|numeric|gt:0",
+            "total" => "required|numeric|gt:0",
+            "discount"=>"required",
+            "pay"=>"required|numeric|gt:0",
+        ]);
+        
+        $purchase->update([
+            "total_item" => $data["total_item"],
+            "total_price" => $data["total"],
+            "discount" => $data["discount"],
+            "pay" => $data["pay"],
+        ]);
 
         $detail = PurchaseDetails::where('purchase_id', '=', $request['purchase_id'])->get();
         foreach ($detail as $data) {
