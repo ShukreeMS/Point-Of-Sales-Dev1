@@ -12,9 +12,8 @@
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i>
       </button>
       <div class="dropdown-menu">
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Member</a>
-	  	<a class="dropdown-item has-icon" onclick="printCard()"><i class="fas fa-print"></i>Print Kartu Member</a>
-      </div>
+      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Member</a>
+	  </div>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -28,11 +27,11 @@
                       	<label for="ig_checkbox"></label>
                   	</th>
                     <th>No</th>
-                    <th>Kode Member</th>
-                    <th>Nama Member</th>
-                    <th>Alamat</th>
-                    <th>Nomor Telepon</th>
-                    <th>Kelola Data</th>
+                    <th>Member Code</th>
+                    <th>Member Name</th>
+                    <th>Address</th>
+                    <th>Telephone</th>
+                    <th>Manage Data</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,9 +49,9 @@
 	var table, save_method;
 	$(function(){
 		table = $('.table').DataTable({
-			"language": {
+			/* "language": {
             	"url" : "{{asset('tables_indo.json')}}",
-         	},
+         	}, */
 			"processing" : true,
 			"serverside" : true,
 			"ajax" : {
@@ -84,7 +83,7 @@
 					dataType : "JSON",
 					success : function(data){
 						if(data.msg=="error"){
-							alert('Kode member sudah terpakai');
+							alert('Member Code Already Used');
 							$('#member_code').focus().select();
 						}else{
 							$('#modal-form').modal('hide');
@@ -92,7 +91,7 @@
 						}
 					},
 					error : function(){
-						alert("Tidak dapat menyimpan data");
+						alert("Unable to save data");
 					}
 				});
 				return false;
@@ -104,7 +103,7 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-		$('.modal-title').text('Tambah Member');
+		$('.modal-title').text('Add Member');
 		$('#member_code').attr('readonly', false);
 	}
 	function editForm(id){
@@ -126,13 +125,13 @@
 				$('#member_phone_number').val(data.member_phone_number);
 			},
 			error		: function(){
-				alert("Tidak dapat menampilkan data!");
+				alert("Unable to display data!");
 			}
 		});
 	}
 
 	function deleteData(id){
-		if(confirm("Apakah yakin data akan dihapus?")){
+		if(confirm("Do you want to delete data?")){
 			$.ajax({
 				url		: "member/"+id,
 				type 	: "POST",
@@ -141,7 +140,7 @@
 					table.ajax.reload();
 				},
 				error	: function(){
-					alert("Tidak dapat menghapus data");
+					alert("Unable to delete data");
 				} 
 			});
 		}
@@ -149,7 +148,7 @@
 
 	function printCard(){
 		if ($('input:checked').length < 1) {
-			alert('Pilih data yang akan dicetak!');
+			alert('Please select the data to be print barcode');
 		}else{
 			$('#form-member').attr('target', '_blank').attr('action', "member/print/").submit();
 		}

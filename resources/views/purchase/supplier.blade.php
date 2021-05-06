@@ -10,10 +10,10 @@
                             <table class="table table-striped table-supplier">
                                 <thead>
                                     <tr>
-                                        <th>Nama Supplier</th>
-                                        <th>Alamat</th>
-                                        <th>Telepon</th>
-                                        <th>Aksi</th>
+                                        <th>Supplier Name</th>
+                                        <th>Address</th>
+                                        <th>Telephone</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -22,7 +22,7 @@
                                         <td>{{$data->supplier_name}}</td>
                                         <td>{{$data->supplier_address}}</td>
                                         <td>{{$data->supplier_phone_number}}</td>
-                                        <td><a href="purchase/{{$data->supplier_id}}/add">Pilih</a></td>
+                                        <td><a href="purchase/{{$data->supplier_id}}/add">Choose</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -31,7 +31,7 @@
                     </div>
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">BATAL</button>
+	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancel</button>
 	            </div>
         </div>
     </div>

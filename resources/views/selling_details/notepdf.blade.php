@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Nota PDF</title>
+   <title>Invoice</title>
    <style type="text/css">
       table td{font: arial 12px;}
       table.data td,
@@ -19,14 +19,14 @@
 
 <table width="100%">
   <tr>
-     <td rowspan="3" width="60%"><img src="../public/images/{{$setting->company_logo}}" width="150"><br>
+     {{-- <td rowspan="3" width="60%"><img src="../public/images/{{$setting->company_logo}}" width="150"><br>
      {{ $setting->company_address }}<br><br>
-     </td>
-     <td>Tanggal</td>
-     <td>: {{ indo_date(date('Y-m-d')) }}</td>
+     </td> --}}
+     <td>Date</td>
+     <td>: {{ en_date(date('Y-m-d')) }}</td>
   </tr>     
   <tr>
-     <td>Kode Member</td>
+     <td>Member Code</td>
      <td>: {{ $selling->member_code }}</td>
   </tr>
 </table>
@@ -36,10 +36,10 @@
    <tr>
     <th>No</th>
     <th>Product Code</th>
-    <th>Nama Product</th>
-    <th>Harga Satuan</th>
-    <th>Jumlah</th>
-    <th>Diskon</th>
+    <th>Product Name</th>
+    <th>Selling Price</th>
+    <th>Total</th>
+    <th>Discount</th>
     <th>Subtotal</th>
    </tr>
 
@@ -59,18 +59,18 @@
    
    </tbody>
    <tfoot>
-    <tr><td colspan="6" align="right"><b>Total Harga</b></td><td align="right"><b>{{ currency_format($selling->total_price) }}</b></td></tr>
-    <tr><td colspan="6" align="right"><b>Diskon</b></td><td align="right"><b>{{ currency_format($selling->discount) }}%</b></td></tr>
-    <tr><td colspan="6" align="right"><b>Total Bayar</b></td><td align="right"><b>{{ currency_format($selling->pay) }}</b></td></tr>
-    <tr><td colspan="6" align="right"><b>Diterima</b></td><td align="right"><b>{{ currency_format($selling->received) }}</b></td></tr>
-    <tr><td colspan="6" align="right"><b>Kembali</b></td><td align="right"><b>{{ currency_format($selling->received - $selling->pay) }}</b></td></tr>
+    <tr><td colspan="6" align="right"><b>Total Price</b></td><td align="right"><b>{{ currency_format($selling->total_price) }}</b></td></tr>
+    <tr><td colspan="6" align="right"><b>Discount</b></td><td align="right"><b>{{ currency_format($selling->discount) }}%</b></td></tr>
+    <tr><td colspan="6" align="right"><b>Total Purchase</b></td><td align="right"><b>{{ currency_format($selling->pay) }}</b></td></tr>
+    <tr><td colspan="6" align="right"><b>Received</b></td><td align="right"><b>{{ currency_format($selling->received) }}</b></td></tr>
+    <tr><td colspan="6" align="right"><b>Return</b></td><td align="right"><b>{{ currency_format($selling->received - $selling->pay) }}</b></td></tr>
    </tfoot>
 </table>
 
 <table width="100%">
   <tr>
     <td>
-      <b>Terimakasih telah berbelanja dan sampai jumpa</b>
+      <b>Thank you for shopping and bye</b>
     </td>
     <td align="center">
       Cashier<br><br><br> {{Auth::user()->name}}

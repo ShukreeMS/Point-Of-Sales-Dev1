@@ -18,17 +18,17 @@ class SpendingController extends Controller
             $no ++;
             $row = array();
             $row[] = $no;
-            $row[] = indo_date(substr($list->created_at, 0, 10), false);
+            $row[] = en_date(substr($list->created_at, 0, 10), false);
             $row[] = $list->spending_type;
             $row[] = "Rp. " . currency_format($list->nominal);
             $row[] = '<tr>
                      <div class="dropdown d-inline">
                       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Aksi
+                        Action
                       </button>
                       <div class="dropdown-menu">
                         <a onclick="editForm('.$list->spending_id.')" class="dropdown-item has-icon"><i class="fas fa-edit"></i>Edit Data</a>
-                        <a onclick="deleteData('.$list->spending_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Hapus Data</a>
+                        <a onclick="deleteData('.$list->spending_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Delete Data</a>
                       </div></tr>';
             $data[] = $row;
         }

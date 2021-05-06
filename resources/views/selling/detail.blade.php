@@ -13,9 +13,9 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Product Code</th>
-                                        <th>Nama Product</th>
-                                        <th align="right">Harga</th>
-                                        <th>Jumlah</th>
+                                        <th>Product Name</th>
+                                        <th align="right">Price</th>
+                                        <th>Total</th>
                                         <th align="center">Sub Total</th>
                                     </tr>
                                 </thead>
@@ -26,7 +26,7 @@
                     </div>
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">BATAL</button>
+	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancel</button>
 	            </div>
         </div>
     </div>

@@ -11,9 +11,9 @@
                                 <thead>
                                     <tr>
                                         <th>Product Code</th>
-                                        <th>Nama Product</th>
-                                        <th>Harga Beli</th>
-                                        <th>Aksi</th>
+                                        <th>Product Name</th>
+                                        <th>Purchase Price</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -22,7 +22,7 @@
                                         <td>{{$data->product_code}}</td>
                                         <td>{{$data->product_name}}</td>
                                         <td>Rp. {{currency_format($data->purchase_price)}}</td>
-                                        <td><a onclick="selectItem({{$data->product_code}})">Pilih</a></td>
+                                        <td><a onclick="selectItem({{$data->product_code}})">Choose</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -31,7 +31,7 @@
                     </div>
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">BATAL</button>
+	                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancel</button>
 	            </div>
         </div>
     </div>

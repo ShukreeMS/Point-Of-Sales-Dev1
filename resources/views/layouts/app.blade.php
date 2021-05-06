@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -72,7 +72,7 @@
             <a href="index.html">St</a>
           </div> --}}
           <ul class="sidebar-menu">
-          <li class="menu-header">Dashboard</li>      
+          <li class="menu-header"></li>      
             <li>
             <a class="nav-link" href="{{route('home')}}">
                 <i class="fas fa-columns"></i>
@@ -101,15 +101,15 @@
             <li>
                 <a class="nav-link" href="{{route('member.index')}}">
                     <i class="fas fa-credit-card"></i>
-                    <span>Member</span>
+                    <span>Customers</span>
                 </a>
             </li>
-            {{-- <li>
+            <li>
                 <a class="nav-link" href="{{route('spending.index')}}">
                     <i class="fas fa-hand-holding-usd"></i>
-                    <span>Pengeluaran</span>
+                    <span>Expense</span>
                 </a>
-            </li> --}}
+            </li>
             <li>
                 <a class="nav-link" href="{{route('user.index')}}">
                     <i class="fas fa-users"></i>
@@ -122,29 +122,53 @@
                     <span>Sales</span>
                 </a>
             </li>
+
             {{-- <li>
+
+                <a class="nav-link" href="{{route('member.index')}}">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Invoice</span>
+                </a>
+            </li>
+            <li>
+              <a class="nav-link" href="{{route('member.index')}}">
+                  <i class="fas fa-file-invoice-dollar"></i>
+                  <span>Invoice Product</span>
+              </a>
+            </li> --}}
+           
+
+            <li>
+
                 <a class="nav-link" href="{{route('purchase.index')}}">
                     <i class="fas fa-shopping-cart"></i>
-                    <span>Pembelian</span>
+                    <span>Purchase</span>
                 </a>
-            </li> --}}
+            </li>
             <li>
                 <a class="nav-link" href="{{route('report.index')}}">
                     <i class="fas fa-file-alt"></i>
-                    <span>Report</span>
+                    <span>Income Report</span>
                 </a>
             </li>
+            <li>
+              <a class="nav-link" href="{{route('productreport.index')}}">
+                  <i class="fas fa-file-alt"></i>
+                  <span>Product Report</span>
+              </a>
+          </li>
+
             @else
             <li>
                 <a class="nav-link" href="{{route('transaction.index')}}">
                     <i class="fas fa-fire"></i>
-                    <span>Transaksi</span>
+                    <span>Transaction</span>
                 </a>
             </li>
             <li>
                 <a class="nav-link" href="{{route('transaction.new')}}">
                     <i class="fas fa-fire"></i>
-                    <span>Transaksi Baru</span>
+                    <span>New Transaction</span>
                 </a>
             </li>
             @endif

@@ -1,7 +1,7 @@
 <div class="modal" id="modal-form" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form id="form_validation" method="POST" data-toggle="validator">
+            <form id="form_validation" method="POST" data-toggle="validator" class="needs-validation" novalidate>
 					{{csrf_field()}} {{method_field('POST')}}
             <div class="modal-header">
                 <h4 class="modal-title" id="defaultModalLabel"></h4>
@@ -10,61 +10,85 @@
                 <div class="modal-body">
                 <input type="hidden" id="id" name="id">
                     <div class="form-group form-float">
-                        <label class="form-label">Product Code</label>
+                        <label class="form-label" for="validationCustom01">Product Code</label>
                         <div class="form-line">
-                            <input type="number" class="form-control" id="product_code" name="product_code" autofocus required>
+                            <input type="number" class="form-control" id="product_code" id="validationCustom01" name="product_code" autofocus required>
+                            <div class="invalid-feedback">
+                                Please enter valid code.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Nama Product</label>
-                            <input type="text" class="form-control" id="product_name" name="product_name" autofocus required>
+                            <label class="form-label" for="validationCustom02">Product Name</label>
+                            <input type="text" class="form-control" id="product_name" id="validationCustom02" name="product_name" autofocus required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Product Name.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
                             <select id="category" type="text" name="category" class="form-control show-tick" required>
-                                <option value="">-- Pilih Category --</option>
+                                <option value="">-- Choose Category --</option>
                                 @foreach($category as $list)
                                 <option value="{{$list->category_id}}">{{$list->category_name}}</option>
                                 @endforeach
                             </select>
+                            <div class="invalid-feedback">
+                                Please select category.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Merek Product</label>
+                            <label class="form-label">Product Brand</label>
                             <input type="text" class="form-control" id="product_brand" name="product_brand" autofocus required>
+                            <div class="invalid-feedback">
+                                Please enter valid brand name.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Harga Beli</label>
+                            <label class="form-label">Purchase Price</label>
                             <input type="text" class="form-control" id="purchase_price" name="purchase_price" autofocus required>
+                            <div class="invalid-feedback">
+                                Please enter valid price.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Diskon</label>
-                            <input type="text" class="form-control" id="discount" name="discount" autofocus required>
+                            <label class="form-label">Discount</label>
+                            <input type="text" class="form-control" id="discount" name="discount" placeholder="if no discount enter 0" autofocus required>
+                            <div class="invalid-feedback">
+                                Please enter value.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Harga Jual</label>
-                            <input type="text" class="form-control" id="selling_price" name="selling_price" autofocus required>
+                            <label class="form-label" for="validationCustom03">Selling Price</label>
+                            <input type="text" class="form-control" id="selling_price" id="validationCustom03" name="selling_price" autofocus required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Selling Price.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label class="form-label">Stok Product</label>
+                            <label class="form-label">Product Stock</label>
                             <input type="text" class="form-control" id="product_stock" name="product_stock" autofocus required>
+                            <div class="invalid-feedback">
+                                Please Enter valid stock quantity.
+                            </div>
                         </div>
                     </div>
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
-                    <button type="submit" class="btn btn-primary">SIMPAN</button>
+	                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
 	            </div>
             </form>
         </div>

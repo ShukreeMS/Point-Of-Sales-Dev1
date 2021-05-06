@@ -10,7 +10,7 @@
   <div class="card-body">
   	<button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Tambah Pengguna</a>
+      	<a class="dropdown-item has-icon" onclick="addForm()"><i class="fas fa-plus"></i>Add Users</a>
       </div>
   </div>
   <div class="card-body">
@@ -19,9 +19,9 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama User</th>
+                    <th>UserName</th>
                     <th>Email</th>
-                    <th>Kelola Data</th>
+                    <th>Manage Data</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,9 +38,9 @@
 	var table, save_method;
 	$(function(){
 		table = $('.table').DataTable({
-			"language": {
+			/* "language": {
             	"url" : "{{asset('tables_indo.json')}}",
-         	},
+         	}, */
 			"processing" : true,
 			"ajax" : {
 				"url"  : "{{route('user.data')}}",
@@ -62,7 +62,7 @@
 						table.ajax.reload();
 					},
 					error : function(){
-						alert("Tidak dapat menyimpan data");
+						alert("Unable to save data!");
 					}
 				});
 				return false;
@@ -74,7 +74,7 @@
 		$('input[name=_method]').val('POST');
 		$('#modal-form').modal('show');
 		$('#modal-form form')[0].reset();
-		$('.modal-title').text('Tambah User');
+		$('.modal-title').text('Add User');
 		$('#password, #loop_password').attr('required', true);
 	}
 	function editForm(id){
@@ -95,13 +95,13 @@
 				$('#password, #loop_password').removeAttr('required');
 			},
 			error		: function(){
-				alert("Tidak dapat menampilkan data!");
+				alert("Unable to display data!");
 			}
 		});
 	}
 
 	function deleteData(id){
-		if(confirm("Apakah yakin data akan dihapus?")){
+		if(confirm("Do you want to delete data?")){
 			$.ajax({
 				url		: "user/"+id,
 				type 	: "POST",
@@ -110,7 +110,7 @@
 					table.ajax.reload();
 				},
 				error	: function(){
-					alert("Tidak dapat menghapus data");
+					alert("Unable to delete data");
 				} 
 			});
 		}

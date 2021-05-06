@@ -13,11 +13,14 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SpendingController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\Auth\RegisterController;
 
 use App\Category;
+use App\Mail\StockLowMail;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,15 +37,44 @@ use Illuminate\Support\Facades\Auth;
 //      return view('welcome');
 //  });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+// Confirm Password (added in v6.2)
+Route::get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
+Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
+
+// Email Verification Routes...
+Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify'); // v6.x
+/* Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify'); // v5.x */
+Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+
 
 /* Route::get('purchase/{id}/show', 'RegisterController@create');
 Route::view('/register', 'register');
 Route::get('/register', function () {
     return view('auth.register');
 }); */
+
 
 Route::group(['middleware' => ['web', 'usercheck:1']], function(){
 	Route::get('category/data', 'CategoryController@listData')->name('category.data');
@@ -75,6 +107,7 @@ Route::group(['middleware' => ['web', 'usercheck:1']], function(){
 	Route::get('purchase_details/loadform/{discount}/{total}', 'PurchaseDetailsController@loadForm');
 	Route::resource('purchase_details', 'PurchaseDetailsController');
 
+
 	Route::get('selling/data', 'SellingController@listData')->name('selling.data');
 	Route::get('selling/{id}/show', 'SellingController@show');
 	Route::resource('selling', 'SellingController');
@@ -84,6 +117,14 @@ Route::group(['middleware' => ['web', 'usercheck:1']], function(){
    Route::get('report/data/{begin}/{end}', 'ReportController@listData')->name('report.data'); 
    Route::get('report/pdf/{begin}/{end}', 'ReportController@exportPDF');
    Route::resource('setting', 'SettingController');
+
+	Route::view('/email', 'emails.lowstock');
+
+	Route::get('product-report', 'ProductReportController@index')->name('productreport.index');
+	Route::post('product-report', 'ProductReportController@filterdate')->name('productreport.data');
+	Route::get('product-report/pdf/{begin}/{end}', 'ProductReportController@exportpdf');
+	// Route::post('product-report/pdf/{search}', 'ProductReportController@exportpdf');
+
 
 });
 

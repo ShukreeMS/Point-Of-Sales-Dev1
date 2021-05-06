@@ -4,7 +4,7 @@
 	  
    <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> &times; </span> </button>
-      <h3 class="modal-title">Cari Product</h3>
+      <h3 class="modal-title">Search Product</h3>
    </div>
 				
 <div class="modal-body">
@@ -12,9 +12,9 @@
 		<thead>
 		   <tr>
 		      <th>Product Code</th>
-		      <th>Nama Product</th>
-		      <th>Harga Beli</th>
-		      <th>Aksi</th>
+		      <th>Product Name</th>
+		      <th>Purchase Price</th>
+		      <th>action</th>
 		   </tr>
 		</thead>
 		<tbody>
@@ -23,7 +23,7 @@
 		      <th>{{ $data->product_code }}</th>
 		      <th>{{ $data->product_name }}</th>
 		      <th>Rp. {{ currency_format($data->purchase_price) }}</th>
-		      <th><a onclick="selectItem({{ $data->product_code }})" class="btn btn-primary"><i class="fa fa-check-circle"></i> Pilih</a></th>
+		      <th><a onclick="selectItem({{ $data->product_code }})" class="btn btn-primary"><i class="fa fa-check-circle"></i> Choose</a></th>
 		    </tr>
 			@endforeach
 		</tbody>

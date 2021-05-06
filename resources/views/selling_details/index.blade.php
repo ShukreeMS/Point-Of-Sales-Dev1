@@ -6,7 +6,16 @@
 
 @section('content')
   <div class="card">
-    <div class="card-body">     
+    <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-warning">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif     
       <form class="form form-horizontal form-product" method="post">
         {{ csrf_field() }}  
         <input type="hidden" name="selling_id" value="{{ $selling_id }}">
@@ -29,12 +38,12 @@
               <tr>
                 <th width="30">No</th>
                 <th>Product Code</th>
-                <th>Nama Product</th>
-                <th>Harga</th>
-                <th>Jumlah</th>
-                <th>Diskon</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Discount</th>
                 <th>Sub Total</th>
-                <th width="100">Aksi</th>
+                <th width="100">action</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -63,7 +72,7 @@
               <input type="text" class="form-control" id="total_rp" readonly>  
             </div>
 
-            <div class="section-title">Kode Member</div>
+            <div class="section-title">Member Code</div>
             <div class="form-group">
               <div class="input-group mb-3">
                 <input id="member_code" name="member_code" value="0" type="text" class="form-control" placeholder="" aria-label="" autofocus required>
@@ -73,22 +82,22 @@
               </div>
             </div>
 
-            <div class="section-title">Kode Member</div>
+            <div class="section-title">Member Code</div>
             <div class="form-group">           
               <input type="text" class="form-control" name="discount" id="discount" value="0" readonly>
             </div>
 
-            <div class="section-title">Bayar</div>
+            <div class="section-title">Payment</div>
             <div class="form-group">            
               <input type="text" class="form-control" id="pay_rp" readonly>
             </div>
 
-            <div class="section-title">Diterima</div>
+            <div class="section-title">Received</div>
             <div class="form-group">
               <input type="number" class="form-control" value="0" name="received" id="received">  
             </div>
 
-            <div class="section-title">Kembali</div>
+            <div class="section-title">Return</div>
             <div class="form-group">
               <input type="text" class="form-control" id="remaining" value="0" readonly>
             </div>
@@ -99,7 +108,7 @@
           
     <div class="box-footer">
       <button type="submit" class="btn btn-primary pull-right save float-right mb-5 mr-4">
-        Simpan Transaksi
+        Save Transaction
       </button>
     </div>
   </div>
@@ -168,7 +177,7 @@
           });             
         },
         error : function(){
-          alert("Tidak dapat menyimpan data!");
+          alert("Unable to save data!");
         }   
       });
     }
@@ -199,21 +208,21 @@
               });             
             },
             error : function(){
-              alert("Tidak dapat menyimpan data!");
+              alert("Unable to Edit Data!");
             }   
          });
     }
 
     function selectMember(member_code){
       $('#modal-member').modal('hide');
-      $('#discount').val('{{ $setting->member_discount }}');
+      // $('#discount').val('{{ $setting->member_discount }}');
       $('#member_code').val(member_code);
       loadForm($('#discount').val());
       $('#received').val(0).focus().select();
     }
 
     function deleteItem(id){
-       if(confirm("Apakah yakin data akan dihapus?")){
+       if(confirm("Do you want to Delete this?")){
          $.ajax({
            url : "transaction/"+id,
            type : "POST",
@@ -224,7 +233,7 @@
               }); 
            },
            error : function(){
-             alert("Tidak dapat menghapus data!");
+             alert("Cannot Delete Data!");
            }
          });
        }
@@ -242,17 +251,15 @@
              $('#total_rp').val("Rp. "+data.total_rp);
              $('#pay_rp').val("Rp. "+data.pay_rp);
              $('#pay').val(data.pay);
-             $('#show-pay').html("<small>Bayar: </small><br>Rp. "+data.pay_rp);
-             $('#show-spelling').text(data.spelling);
+             $('#show-pay').html("<small>Payment: </small><br>Rp. "+data.pay_rp);
             
              $('#remaining').val("Rp. "+data.remaining_rp);
              if($('#received').val() != 0){
-                $('#show-pay').html("<small>Kembali: </small><br>Rp. "+data.remaining_rp+"</small>");
-                $('#show-spelling').text(data.remaining_spelling);
+                $('#show-pay').html("<small>Return: </small><br>Rp. "+data.remaining_rp+"</small>");
              }
            },
            error : function(){
-             alert("Tidak dapat menampilkan data!");
+             alert("Unable to Display Data!");
            }
       });
     }

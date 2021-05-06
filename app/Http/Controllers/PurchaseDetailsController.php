@@ -70,7 +70,6 @@ class PurchaseDetailsController extends Controller
     	    "total_rp"  => currency_format($total),
     	    "pay"      => $pay,
     	    "pay_rp"    => currency_format($pay),
-    	    "spelling" => ucwords(spelling($pay))." Rupiah"
     	);
     	return response()->json($data);
     }    

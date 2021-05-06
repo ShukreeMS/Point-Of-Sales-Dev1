@@ -3,7 +3,7 @@
       <div class="modal-content">
  
    <div class="modal-header">
-      <h4 class="modal-title">Detail Pembelian</h4>
+      <h4 class="modal-title">Purchase Details</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> &times; </span> </button>
    </div>
             
@@ -14,9 +14,9 @@
          <tr>
             <th width="30">No</th>
             <th>Product Code</th>
-            <th>Nama Product</th>
-            <th>Harga</th>
-            <th>Jumlah</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Total</th>
             <th>Sub Total</th>
          </tr>
       </thead>

@@ -68,23 +68,23 @@
       </div>
 </div>
 
-    <div class="row">
+    {{-- <div class="row">
               <div class="card">
                 <div class="card-header">
-              <h4>Grafik Pendapatan {{ indo_date($begin) }} - {{ indo_date($end) }}</h4>
+              <h4>Income Graph from {{ ($begin) }} to {{ ($end) }}</h4>
             </div>
             <div class="card-body">
               <div class="chart">
             <canvas id="salesChart" height="400" width="1000"></canvas>
               </div>
             </div>
-{{--             <div class="card-body">
+            <div class="card-body">
               <div class="chart">
                     <canvas id="salesChart" style="height: 250px;"></canvas>
-                </div>
-            </div> --}}
+              </div>
+            </div>
         </div>
-</div>
+    </div> --}}
 
 @endsection
 
@@ -99,9 +99,9 @@ var chart = new Chart(ctx, {
     data: {
         labels: {{ json_encode($data_date) }},
         datasets: [{
-            label: 'Pendapatan',
+            label: 'Income',
             backgroundColor: 'transparent',
-            borderColor: '#d71149',
+            borderColor: '#3c5df0',
             data: {{ json_encode($data_income) }}
         }]
     },

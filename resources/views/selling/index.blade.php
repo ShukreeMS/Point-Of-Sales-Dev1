@@ -13,14 +13,15 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Tanggal</th>
-                    <th>Kode Member</th>
-                    <th>Total Item</th>
-                    <th>Total Harga</th>
-                    <th>Diskon</th>
-                    <th>Total Bayar</th>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Member Code</th>
+                    <th>Total Items</th>
+                    <th>Total Price</th>
+                    <th>Discount</th>
+                    <th>Total Payment</th>
                     <th>Cashier</th>
-                    <th>Kelola Data</th>
+                    <th>Manage Data</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -36,9 +37,9 @@
 	var table, save_method, table1;
 	$(function(){
 		table = $('.table-selling').DataTable({
-            "language": {
+            /* "language": {
             "url" : "{{asset('tables_indo.json')}}",
-            },
+            }, */
             "processing" : true,
             "serverside" : true,
 			"ajax" : {
@@ -68,7 +69,7 @@
 
 
     function deleteData(id){
-        if(confirm("Apakah yakin data akan dihapus?")){
+        if(confirm("Do you want to delete data?")){
             $.ajax({
                 url     : "selling/"+id,
                 type    : "POST",
@@ -77,7 +78,7 @@
                     table.ajax.reload();
                 },
                 error   : function(){
-                    alert("Tidak dapat menghapus data");
+                    alert("Unable to delete data");
                 } 
             });
         }

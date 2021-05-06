@@ -36,11 +36,11 @@ class ProductController extends Controller
             $row[] = '
                     <div class="dropdown d-inline">
                       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Aksi
+                        Action
                       </button>
                       <div class="dropdown-menu">
                         <a onclick="editForm('.$list->product_id.')" class="dropdown-item has-icon"><i class="fas fa-edit"></i>Edit Data</a>
-                        <a onclick="deleteData('.$list->product_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Hapus Data</a>
+                        <a onclick="deleteData('.$list->product_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Delete Data</a>
                       </div>';
             $data[] = $row;
     	}
@@ -81,7 +81,7 @@ class ProductController extends Controller
 		$product->selling_price = $request['selling_price'];
 		$product->product_stock = $request['product_stock'];
 		$product->update();
-		echo json_encode(array('msg'=>'success'));
+		echo json_encode(array('msg'=>'Update successful'));
     }
 
     public function destroy($id){

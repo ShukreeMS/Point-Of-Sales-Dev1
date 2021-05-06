@@ -36,14 +36,14 @@ class ReportController extends Controller
        $no ++;
        $row = array();
        $row[] = $no;
-       $row[] = indo_date($date, false);
+       $row[] = en_date($date, false);
        $row[] = currency_format($total_selling);
        $row[] = currency_format($total_purchase);
        $row[] = currency_format($total_spending);
        $row[] = currency_format($income);
        $data[] = $row;
      }
-     $data[] = array("", "", "", "", "Total Pendapatan", currency_format($total_income));
+     $data[] = array("", "", "", "", "Total Profit LKR", currency_format($total_income));
 
      return $data;
    }
@@ -66,7 +66,8 @@ class ReportController extends Controller
      $date_begin = $begin;
      $date_end = $end;
      $data = $this->getData($begin, $end);
-     $pdf = PDF::loadView('report.pdf', compact('date_begin', 'date_end', 'data'));
+     set_time_limit(300);
+     $pdf = PDF::loadView('report.pdf', compact('date_begin', 'date_end', 'data', ));
      $pdf->setPaper('a4', 'potrait');
      
      return $pdf->stream();

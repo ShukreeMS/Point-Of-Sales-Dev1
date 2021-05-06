@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-Transaksi Pembelian
+Purchase Transaction
 @endsection
 
 @section('content')
@@ -15,15 +15,24 @@ Transaksi Pembelian
             <th><b>: {{$supplier->supplier_name}}</b></th>
         </tr>
         <tr>
-            <th>Alamat</th>
+            <th>Address</th>
             <th><b>: {{$supplier->supplier_address}}</b></th>
         </tr>
         <tr>
-            <th>No. Telepon</th>
+            <th>Telephone</th>
             <th><b>: {{$supplier->supplier_phone_number}}</b></th>
         </tr>
       </table>
   </div>
+            @if ($errors->any())
+                <div class="alert alert-warning">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         <form class="form form-horizontal form-product" method="POST">
             {{csrf_field()}}
             <input type="hidden" name="purchase_id" value="{{$purchase_id}}">
@@ -45,11 +54,11 @@ Transaksi Pembelian
                     <tr>
                         <th width="30">No</th>
                         <th>Product Code</th>
-                        <th>Nama Product</th>
-                        <th>Harga</th>
-                        <th>Jumlah</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Total</th>
                         <th>Sub Total</th>
-                        <th width="100">Aksi</th>
+                        <th width="100">Action</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -65,7 +74,7 @@ Transaksi Pembelian
             <div id="show-spelling" style="background: #ffffff; color: #d71149; font-weight:bold; border:5px solid #d71149; padding: 10px"></div>
         </div>
         <div class="col-md-4">
-            <form class="form form-horizontal form-purchase" method="POST" action="{{route('purchase.store')}}">
+            <form class="form form-horizontal form-purchase needs-validation" method="POST" action="{{route('purchase.store')}}" novalidate>
                 {{csrf_field()}}
                 <input type="hidden" name="purchase_id" value="{{$purchase_id}}">
                 <input type="hidden" name="total" id="total">
@@ -74,23 +83,26 @@ Transaksi Pembelian
                 <div class="form-group form-float">
                     <div class="form-line">
                         <div class="section-title">Total</div>
-                        <input type="text" class="form-control" id="total_rp" readonly>
+                        <input type="text" class="form-control" id="total_rp" readonly autofocus required>
+                        <div class="invalid-feedback">
+                            Please Enter proper value.
+                        </div>
                     </div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <div class="section-title">Diskon</div>
+                        <div class="section-title">Discount</div>
                         <input type="number" class="form-control" id="discount" name="discount" value="0">
                     </div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <div class="section-title">Bayar</div>
+                        <div class="section-title">Payment</div>
                         <input type="text" class="form-control" id="pay_rp" readonly>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-outline-primary save">SIMPAN TRANSAKSI</button>
+                    <button type="submit" class="btn btn-outline-primary " onclick="return confirm('Are you sure you want to add purchase?')">Save Transaction</button>
                 </div>
             </form>
         </div>
@@ -146,7 +158,7 @@ Transaksi Pembelian
                 });
             },
             error : function(){
-                alert("Tidak dapat menyimpan data");
+                alert("Unable to add item");
             }
         })
     }
@@ -168,7 +180,7 @@ Transaksi Pembelian
         });
     },
     error : function(){
-        alert("Tidak dapat menyimpan data");
+        alert("Unable to edit data");
     }
 });
 }
@@ -178,7 +190,7 @@ function showProduct(){
 }
 
 function deleteItem(id){
-    if(confirm("Apakah yakin data akan dihapus?")){
+    if(confirm("Do you want to delete data?")){
         $.ajax({
             url     : "purchase_details/"+id,
             type    : "POST",
@@ -189,7 +201,7 @@ function deleteItem(id){
                 });
             },
             error   : function(){
-                alert("Tidak dapat menghapus data");
+                alert("unable to delete data");
             } 
         });
     }
@@ -207,10 +219,9 @@ function loadForm(discount=0){
             $('#pay_rp').val("Rp. "+data.pay_rp);
             $('#pay').val(data.pay);
             $('#show-pay').text("Rp. "+data.pay_rp);
-            $('#show-spelling').text(data.spelling)
         },
         error       : function(){
-            alert("Tidak dapat menampilkan data!");
+            alert("cannot display data!");
         }
     });
 }

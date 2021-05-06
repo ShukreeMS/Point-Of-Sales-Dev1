@@ -21,11 +21,11 @@ class CategoryController extends Controller
             $row[] = '<tr>
                     <div class="dropdown d-inline">
                       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Aksi
+                        Action
                       </button>
                       <div class="dropdown-menu">
                         <a onclick="editForm('.$list->category_id.')" class="dropdown-item has-icon"><i class="fas fa-edit"></i>Edit Data</a>
-                        <a onclick="deleteData('.$list->category_id.')" class="deleteData dropdown-item has-icon"><i class="fas fa-trash"></i>Hapus Data</a>
+                        <a onclick="deleteData('.$list->category_id.')" class="deleteData dropdown-item has-icon"><i class="fas fa-trash"></i>Delete Data</a>
                       </div>
                      </tr>';
             $data[] = $row;
@@ -46,6 +46,10 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->category_name = $request['category_name'];
         $category->update();
+
+        /* return back()->with('update', 'Data Updated Successfully!');
+        return redirect()->with('message', 'The success message!'); */
+        return redirect()->back() ->with('alert', 'Updated!');
     }
     public function destroy($id){
         $category = Category::find($id);

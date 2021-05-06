@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\StockLowMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
@@ -9,8 +10,10 @@ use Barryvdh\DomPDF\Facade as PDF;
 use App\Selling;
 use App\Product;
 use App\Member;
+use App\User;
 use App\Setting;
 use App\SellingDetails;
+use Illuminate\Support\Facades\Mail;
 use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\Printer;
 
@@ -112,13 +115,30 @@ class SellingDetailsController extends Controller
    public function saveData(Request $request)
    {
       $selling = Selling::find($request['selling_id']);
-      $selling->member_code = $request['member_code'];
+      /* $selling->member_code = $request['member_code'];
       $selling->total_item = $request['total_item'];
       $selling->total_price = $request['total'];
       $selling->discount = $request['discount'];
       $selling->pay = $request['pay'];
-      $selling->received = $request['received'];
-      $selling->update();
+      $selling->received = $request['received']; */
+      
+      $data = $request->validate([
+        "member_code" => "",
+        "total_item" => "required|numeric|gt:0",
+        "total" => "required|numeric|gt:0",
+        "discount"=>"required",
+        "pay"=>"required|numeric|gt:0",
+        "received"=>"required|numeric|gt:0",
+    ]);
+      
+      $selling->update([
+        "member_code" => $data["member_code"],
+        "total_item" => $data["total_item"],
+        "total_price" => $data["total"],
+        "discount" => $data["discount"],
+        "pay" => $data["pay"],
+        "received" => $data["received"],
+      ]);
 
       $detail = SellingDetails::where('selling_id', '=', $request['selling_id'])->get();
       foreach($detail as $data){
@@ -126,6 +146,13 @@ class SellingDetailsController extends Controller
         $product->product_stock -= $data->total;
         $product->update();
       }
+
+      $products = Product::where('product_stock', '<', 10)->get();
+
+      if(count($products) > 0){
+        Mail::to('shukree@gmail.com')->send(new StockLowMail($products));
+      }
+
       return Redirect::route('transaction.print');
    }
    
@@ -137,16 +164,14 @@ class SellingDetailsController extends Controller
         "total_rp" => currency_format($total),
         "pay" => $pay,
         "pay_rp" => currency_format($pay),
-        "spelling" => ucwords(spelling($pay))." Rupiah",
         "remaining_rp" => currency_format($remaining),
-        "remaining_spelling" => ucwords(spelling($remaining))." Rupiah"
       );
      return response()->json($data);
    }
 
    public function printNote()
    {
-      $detail = SellingDetails::leftJoin('product', 'product.product_code', '=', 'selling_details.product_code')
+      /* $detail = SellingDetails::leftJoin('product', 'product.product_code', '=', 'selling_details.product_code')
         ->where('selling_id', '=', session('selling_id'))
         ->get();
 
@@ -196,7 +221,7 @@ class SellingDetailsController extends Controller
         $printer->text("---------------------------- \n", 0);
 
         $printer->setJustification($left);
-        $printer->text("Total Harga: ", 0);
+        $printer->text("Total Price: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("           ".currency_format($selling->total_price). "\n", -10));
 
@@ -206,36 +231,36 @@ class SellingDetailsController extends Controller
         $printer->text(substr("           ".$selling->total_item . "\n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Diskon Member: ", 0);
+        $printer->text("Discount: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("           ".$selling->discount."% \n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Total Bayar: ", 0);
+        $printer->text("Total Payment: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("            ".currency_format($selling->pay) . "\n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Diterima: ", 0);
+        $printer->text("Received: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("            ".currency_format($selling->received) . "\n", -10));
 
         $printer->setJustification($left);
-        $printer->text("Kembali: ", 0);
+        $printer->text("Return: ", 0);
         $printer->setJustification($right);
         $printer->text(substr("            ".currency_format($selling->received-$selling->pay) . "\n", -10));
         
         $printer->setJustification($center);
         $printer->text("============================ \n", 0);
         $printer->setJustification($center);
-        $printer->text("-= TERIMA KASIH =-", 250);
+        $printer->text("-= Thank You =-", 250);
         
         $printer->setJustification();
         $printer->cut();
         $printer->close();
-      }
+      } */
        
-      return view('selling_details.success', compact('setting'));
+      return view('selling_details.success');
    }
 
    public function notePDF(){
@@ -246,7 +271,7 @@ class SellingDetailsController extends Controller
       $no = 0;
      
      $pdf = PDF::loadView('selling_details.notepdf', compact('detail', 'selling', 'setting', 'no'));
-     $pdf->setPaper(array(0,0,550,440), 'potrait');      
+     $pdf->setPaper(array(0,0,550,440), 'landscape');      
       return $pdf->stream();
    }
 }

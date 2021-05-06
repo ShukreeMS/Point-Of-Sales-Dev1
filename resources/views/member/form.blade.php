@@ -1,7 +1,7 @@
 <div class="modal fade" id="modal-form" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form id="form_validation" method="POST" data-toggle="validator">
+            <form id="form_validation" method="POST" data-toggle="validator" class="needs-validation" novalidate>
 					{{csrf_field()}} {{method_field('POST')}}
             <div class="modal-header">
                 <h4 class="modal-title" id="defaultModalLabel"></h4>
@@ -11,32 +11,45 @@
                     <input type="hidden" id="id" name="id">
                     <div class="form-group form-float">
                         <div class="form-line">                        	
-                        	<label class="form-label">Nama Member</label>
-                            <input type="text" class="form-control" id="member_name" name="member_name" autofocus required>
+                        	<label class="form-label">Member Name</label>
+                            <input type="text" class="form-control" id="member_name" name="member_name" value="{{old("member_name")}}" autofocus required >
+                        
+                            <div class="invalid-feedback">
+                                    Please provide a valid Name.
+                            </div>  
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">                        	
-                        	<label class="form-label">Kode Member</label>
-                            <input type="text" class="form-control" id="member_code" name="member_code" autofocus required>
+                        	<label class="form-label">Member Code</label>
+                            <input type="text" class="form-control" id="member_code" name="member_code" value="{{old("member_code")}}" autofocus required >
+                            <div class="invalid-feedback">
+                                Please provide a valid Code.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">                         
-                            <label class="form-label">Alamat Member</label>
-                            <input type="text" class="form-control" id="member_address" name="member_address" autofocus required>
+                            <label class="form-label">Member Address</label>
+                            <input type="text" class="form-control" id="member_address" name="member_address" value="{{old("member_address")}}"  autofocus required>
+                            <div class="invalid-feedback">
+                                Please provide a valid address.
+                        </div>
                         </div>
                     </div>
                     <div class="form-group form-float">
                         <div class="form-line">                         
-                            <label class="form-label">No. Telepon</label>
-                            <input type="text" class="form-control" id="member_phone_number" name="member_phone_number" autofocus required>
+                            <label class="form-label">Telephone</label>
+                            <input type="text" class="form-control" id="member_phone_number" name="member_phone_number" value="{{old("member_phone_number")}}" autofocus required >
+                            <div class="invalid-feedback">
+                                Please provide a valid number.
+                        </div>
                         </div>
                     </div>
 	            </div>
 	            <div class="modal-footer">
-	                <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
-                    <button type="submit" class="btn btn-primary">SIMPAN</button>
+	                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
 	            </div>
             </form>
         </div>

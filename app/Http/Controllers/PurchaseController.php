@@ -17,14 +17,16 @@ class PurchaseController extends Controller
         return view('purchase.index', compact('supplier'));
     }
     public function listData(){
-        $purchase = Purchase::leftJoin('supplier', 'supplier.supplier_id', '=', 'purchase.supplier_id')->orderBy('purchase.purchase_id', 'desc')->get();
+        $purchase = Purchase::Join('supplier', 'supplier.supplier_id', '=', 'purchase.supplier_id')->orderBy('purchase.purchase_id', 'desc')
+                        ->select('purchase.purchase_id','purchase.created_at', 'supplier.supplier_name', 'purchase.total_item', 'purchase.total_price', 'purchase.discount','purchase.pay', )->get();
         $no = 0;
         $data = array();
         foreach ($purchase as $list) {
             $no ++;
             $row = array();
             $row[] = $no;
-            $row[] = indo_date(substr($list->created_at, 0, 10), false);
+            $row[] = $list->purchase_id;
+            $row[] = en_date($list->created_at);
             $row[] = $list->supplier_name;
             $row[] = $list->total_item;
             $row[] = "Rp. ".currency_format($list->total_price);
@@ -32,11 +34,11 @@ class PurchaseController extends Controller
             $row[] = "Rp. ".currency_format($list->pay);
             $row[] = '<div class="dropdown d-inline">
                       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Aksi
+                        Action
                       </button>
                       <div class="dropdown-menu">
-                        <a onclick="showDetail('.$list->purchase_id.')" class="dropdown-item has-icon"><i class="fas fa-eye"></i>Lihat Data</a>
-                        <a onclick="deleteData('.$list->purchase_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Hapus Data</a>
+                        <a onclick="showDetail('.$list->purchase_id.')" class="dropdown-item has-icon"><i class="fas fa-eye"></i>View Data</a>
+                        <a onclick="deleteData('.$list->purchase_id.')" class="dropdown-item has-icon"><i class="fas fa-trash"></i>Delete Data</a>
                       </div>';
             $data[] = $row;
         }
@@ -77,11 +79,25 @@ class PurchaseController extends Controller
     }
     public function store(Request $request){
         $purchase = Purchase::find($request['purchase_id']);
-        $purchase->total_item = $request['total_item'];
+        /* $purchase->total_item = $request['total_item'];
         $purchase->total_price = $request['total'];
         $purchase->discount = $request['discount'];
         $purchase->pay = $request['pay'];
-        $purchase->update();
+        $purchase->update(); */
+
+        $data = $request->validate([
+            "total_item" => "required|numeric|gt:0",
+            "total" => "required|numeric|gt:0",
+            "discount"=>"required",
+            "pay"=>"required|numeric|gt:0",
+        ]);
+        
+        $purchase->update([
+            "total_item" => $data["total_item"],
+            "total_price" => $data["total"],
+            "discount" => $data["discount"],
+            "pay" => $data["pay"],
+        ]);
 
         $detail = PurchaseDetails::where('purchase_id', '=', $request['purchase_id'])->get();
         foreach ($detail as $data) {
@@ -95,12 +111,12 @@ class PurchaseController extends Controller
         $purchase = Purchase::find($id);
         $purchase->delete();
 
-        $detail = PurchaseDetails::where('purchase_id', '=', $id)->get();
-        foreach ($detail as $data) {
-        	$product = Product::where('product_code', '=', $data->product_code)->first();
-        	$product->stock -= $data->total;
-        	$product->update();
-        	$data->delete();
-        }
+        // $detail = PurchaseDetails::where('purchase_id', '=', $id)->get();
+        // foreach ($detail as $data) {
+        // 	$product = Product::where('product_code', '=', $data->product_code)->first();
+        // 	$product->stock -= $data->total;
+        // 	$product->update();
+        // 	$data->delete();
+        // }
     }    
 }

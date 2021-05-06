@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content-header')
-    Report Pendapatan {{ indo_date($begin, false) }} - {{ indo_date($end, false) }}
+    Income Report {{ en_date($begin, false) }} - {{ en_date($end, false) }}
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
     <div class="dropdown d-inline">
       <button class="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th-large"></i></button>
       <div class="dropdown-menu">
-      <a class="dropdown-item has-icon" onclick="periodForm()"><i class="fas fa-calendar-alt"></i>Ubah Periode</a>
+      <a class="dropdown-item has-icon" onclick="periodForm()"><i class="fas fa-calendar-alt"></i>Change Period</a>
       <a href="report/pdf/{{$begin}}/{{$end}}" target="_blank" class="dropdown-item has-icon"><i class="fas fa-file-pdf"></i>Export PDF</a>
       </div>
   </div>
@@ -23,11 +23,11 @@
             <thead>
             <tr>
               <th width="30">No</th>
-              <th>Tanggal</th>
+              <th>Date</th>
               <th>Sales</th>
-              <th>Pembelian</th>
-              <th>Pengeluaran</th>
-              <th>Pendapatan</th>
+              <th>Purchase</th>
+              <th>Expense</th>
+              <th>Profit</th>
             </tr>
         </thead>
             <tbody>
@@ -48,9 +48,6 @@
 var table, begin, end;
 $(function(){
    table = $('.table-report').DataTable({
-     "language": {
-        "url" : "{{asset('tables_indo.json')}}",
-     },
      "dom" : 'Brt',
      "bSort" : false,
      "bPaginate" : false,
